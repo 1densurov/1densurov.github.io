@@ -1,13 +1,13 @@
-<!doctype html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MineReam Mediavel — средневековый RP сервер Minecraft</title>
-  <meta name="description" content="MineReam Mediavel — средневековый Minecraft RP сервер с авторизацией через Discord, кастомной генерацией, поселениями, сезонами и живым RolePlay.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MineReam Mediavel</title>
+  <meta name="description" content="MineReam Mediavel - средневековый RP сервер Minecraft с кастомным миром, Discord-входом и живой ролью.">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body id="top">
   <div class="site-loader" data-site-loader>
     <div class="site-loader-glow"></div>
     <img src="assets/mineream-prefix.webp" alt="MineReam Mediavel" class="site-loader-logo">
@@ -17,14 +17,13 @@
   <div class="page-shell">
     <header class="site-header" data-nav>
       <div class="header-inner">
-        <a class="brand" href="#top" aria-label="MineReam Mediavel">
+        <a class="brand" href="index.html" aria-label="MineReam Mediavel">
           <img src="assets/mr-logo.webp" alt="MineReam" class="brand-logo">
         </a>
         <nav class="main-nav" aria-label="Главная навигация">
-          <a href="#top">Сервер</a>
-          <a href="#generation">Мир</a>
-          <a href="#mechanics">Механики</a>
-          <a href="#start">Как начать</a>
+          <a href="index.html">Главная</a>
+          <a href="guides.html">Гайды</a>
+          <a href="world.html">Мир</a>
           <a href="rules.html">Правила</a>
         </nav>
         <div class="header-actions">
@@ -32,22 +31,19 @@
         </div>
       </div>
     </header>
-
-    <main id="top">
+    <main>
       <section class="hero-section">
-        <div class="hero-bg">
-          <img src="assets/hero-world.webp" alt="Кастомный биом MineReam Mediavel">
+        <div class="hero-bg" aria-hidden="true">
+          <img src="assets/hero-world.webp" alt="">
         </div>
         <div class="container hero-layout">
           <div class="hero-copy">
-            <p class="eyebrow">Minecraft 1.21.11 • Java • Medieval RP</p>
             <h1>MineReam Mediavel</h1>
-            <p class="lead">Средневековый RP-сервер с кастомным миром, торговлей, сезонами и поселениями.</p>
-            <div class="hero-buttons">
-              <a class="button primary" href="https://discord.gg/bby9jnJpbg" target="_blank" rel="noreferrer">Начать через Discord</a>
+            <p>Средневековый RP сервер Minecraft с кастомным миром, персонажами и выживанием.</p>
+            <div class="hero-actions">
+              <a class="hero-action hero-action-primary" href="guides.html">Узнать подробнее</a>
             </div>
           </div>
-
           <article class="server-card" id="server">
             <img src="assets/spawn-bridge.webp" alt="Спавн MineReam Mediavel" class="server-card-image">
             <div class="server-card-body">
@@ -67,186 +63,76 @@
         </div>
       </section>
 
-
-      <section class="section map-section" id="generation">
-        <div class="container section-head centered">
-          <h2>Карта мира</h2>
-        </div>
-        <div class="container map-layout">
-          <button class="map-frame media-preview" type="button" data-lightbox-src="assets/world-map.webp" data-lightbox-title="Карта мира">
-            <img src="assets/world-map.webp" alt="Карта мира MineReam Mediavel">
-            <span>Карта мира</span>
+      <section class="section quick-section">
+        <div class="container quick-showcase">
+          <button class="quick-showcase-image media-preview" type="button" data-lightbox-src="assets/mineream-short.webp" data-lightbox-title="MineReam Mediavel">
+            <img src="assets/mineream-short.webp" alt="MineReam Mediavel">
           </button>
-          <div class="biome-grid" aria-label="Биомы мира">
-            <button class="biome-card media-preview" type="button" data-lightbox-src="assets/pink-grove.webp" data-lightbox-title="Розовая роща">
-              <img src="assets/pink-grove.webp" alt="Розовая роща">
-              <span>Розовая роща</span>
-            </button>
-            <button class="biome-card media-preview" type="button" data-lightbox-src="assets/swamp-woods.webp" data-lightbox-title="Тёмный лес">
-              <img src="assets/swamp-woods.webp" alt="Тёмный лес">
-              <span>Тёмный лес</span>
-            </button>
-            <button class="biome-card media-preview" type="button" data-lightbox-src="assets/drylands.webp" data-lightbox-title="Сухие земли">
-              <img src="assets/drylands.webp" alt="Сухие земли">
-              <span>Сухие земли</span>
-            </button>
-            <button class="biome-card media-preview" type="button" data-lightbox-src="assets/winter-lake.webp" data-lightbox-title="Зимний край">
-              <img src="assets/winter-lake.webp" alt="Зимний край">
-              <span>Зимний край</span>
-            </button>
-            <button class="biome-card media-preview" type="button" data-lightbox-src="assets/mushroom-hills.webp" data-lightbox-title="Грибные холмы">
-              <img src="assets/mushroom-hills.webp" alt="Грибные холмы">
-              <span>Грибные холмы</span>
-            </button>
-            <button class="biome-card media-preview" type="button" data-lightbox-src="assets/blue-forest.webp" data-lightbox-title="Скалковый лес">
-              <img src="assets/blue-forest.webp" alt="Скалковый лес">
-              <span>Скалковый лес</span>
-            </button>
+          <div class="quick-showcase-body">
+            <h2>MineReam коротко</h2>
+            <div class="quick-feature-list">
+              <article>
+                <span>RP</span>
+                <div>
+                  <h3>Средневековье</h3>
+                  <p>Играй персонажем, а не просто ником в табе.</p>
+                </div>
+              </article>
+              <article>
+                <span>Мир</span>
+                <div>
+                  <h3>Кастомная генерация</h3>
+                  <p>Острова, биомы и места для поселений.</p>
+                </div>
+              </article>
+              <article>
+                <span>Души</span>
+                <div>
+                  <h3>Своя валюта</h3>
+                  <p>Осколки, фрагменты и великие души.</p>
+                </div>
+              </article>
+              <article>
+                <span>Вход</span>
+                <div>
+                  <h3>Через Discord</h3>
+                  <p>Доступ, связь и объявления в одном месте.</p>
+                </div>
+              </article>
+            </div>
           </div>
         </div>
       </section>
-      <section class="section mechanics-section" id="mechanics">
+
+      
+      <section class="section video-section">
         <div class="container section-head centered">
-          <h2>Механики сервера</h2>
+          <h2>Видосы проекта</h2>
         </div>
-        <div class="container mechanics-grid">
-          <article class="mechanic-card">
-            <h3>Войс чат</h3>
-            <p>Говори рядом с игроками и играй сцену живее.</p>
-          </article>
-          <article class="mechanic-card">
-            <h3>Эмоции</h3>
-            <p>Жесты и действия помогают RP без лишнего текста.</p>
-          </article>
-          <article class="mechanic-card">
-            <h3>Крафты</h3>
-            <p>Часть важных предметов создаётся через свои рецепты.</p>
-          </article>
-          <article class="mechanic-card">
-            <h3>Приваты</h3>
-            <p>Самописная система с тотемами и ключами.</p>
-          </article>
-        </div>
-        <div class="container souls-panel">
-          <div>
-            <h3>Души</h3>
-            <p>Три вида валюты для торговли и обмена.</p>
-          </div>
-          <div class="souls-list">
-            <figure>
-              <img src="assets/soul-prefix.webp" alt="Осколок души">
-              <figcaption>Осколок души</figcaption>
-            </figure>
-            <figure>
-              <img src="assets/fragment-prefix.webp" alt="Фрагмент души">
-              <figcaption>Фрагмент души</figcaption>
-            </figure>
-            <figure>
-              <img src="assets/great-prefix.webp" alt="Великая душа">
-              <figcaption>Великая душа</figcaption>
-            </figure>
-          </div>
+        <div class="container video-panel single-video-panel">
+          <a class="video-frame video-link" href="https://www.youtube.com/watch?v=HEm90byZzSM&t=1104s" target="_blank" rel="noreferrer" aria-label="Смотреть видео MineReam на YouTube">
+            <img src="https://img.youtube.com/vi/HEm90byZzSM/maxresdefault.jpg" alt="Видео MineReam">
+            <span class="video-play">Смотреть на YouTube</span>
+          </a>
         </div>
       </section>
-
-      <section class="section start-section" id="start">
-        <div class="container section-head centered">
-          <p class="eyebrow">Мини-гайд</p>
-          <h2>Как начать игру</h2>
+      <footer class="site-footer">
+        <div class="container footer-inner">
+          <span>© 2026 MineReam.</span>
+          <span>Не является официальным продуктом Mojang.</span>
         </div>
-        <div class="container steps-list">
-          <article class="step-row">
-            <span>1</span>
-            <h3>Зайди в Discord</h3>
-            <p>Авторизация проходит через Discord.</p>
-          </article>
-          <article class="step-row">
-            <span>2</span>
-            <h3>Подключись к серверу</h3>
-            <p>Используй IP <button data-copy="play.mineream.ru" type="button">play.mineream.ru</button>. Запасной адрес: eu.mineream.fun.</p>
-          </article>
-          <article class="step-row">
-            <span>3</span>
-            <h3>Пройди вступление</h3>
-            <p>После интро начинается путь скитальца.</p>
-          </article>
-          <article class="step-row">
-            <span>4</span>
-            <h3>Играй роль</h3>
-            <p>Общайся, торгуй и вступай в поселения.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section rules-section" id="rules-preview">
-        <div class="container rules-panel">
-          <div>
-            <h2>Правила позже</h2>
-            <p>Правила уже вынесены на отдельную страницу.</p>
-          </div>
-          <a class="button primary" href="rules.html">Открыть правила</a>
-        </div>
-      </section>
-
-      <section class="section gallery-section">
-        <div class="container section-head centered">
-          <p class="eyebrow">Кадры сервера</p>
-          <h2>MineReam в игре</h2>
-        </div>
-        <div class="container gallery-grid">
-          <img src="assets/market-stall.webp" alt="Рыночная лавка">
-          <img src="assets/villager.webp" alt="NPC в поселении">
-          <img src="assets/keeper-hall.webp" alt="Зал хранителя">
-          <img src="assets/inn.webp" alt="Интерьер таверны">
-          <img src="assets/fields.webp" alt="Поля поселения">
-          <img src="assets/mushroom-hills.webp" alt="Грибные холмы">
-        </div>
-      </section>
-
-      <section class="final-cta">
-        <div class="container final-cta-inner">
-          <img src="assets/mr-logo.webp" alt="MineReam" class="final-logo">
-          <div>
-            <p class="eyebrow">MineReam Mediavel</p>
-            <h2>Начни с Discord</h2>
-            <p>Discord нужен для входа и связи с сервером.</p>
-          </div>
-          <div class="final-actions">
-            <a class="button primary" href="https://discord.gg/bby9jnJpbg" target="_blank" rel="noreferrer">Discord</a>
-            <button class="button secondary" data-copy="play.mineream.ru" type="button">Скопировать IP</button>
-          </div>
-        </div>
-      </section>
+      </footer>
     </main>
-
-    <footer class="footer">
-      <span>MineReam Mediavel</span>
-      <span>Средневековый RP сервер Minecraft</span>
-    </footer>
   </div>
 
-
   <div class="media-lightbox" data-lightbox hidden>
-    <button class="media-lightbox-close" type="button" data-lightbox-close aria-label="Закрыть просмотр">×</button>
+    <button class="media-lightbox-close" type="button" data-lightbox-close aria-label="Закрыть">×</button>
     <figure class="media-lightbox-card">
       <img src="" alt="" data-lightbox-image>
       <figcaption data-lightbox-caption></figcaption>
     </figure>
   </div>
-  <div class="toast" role="status" aria-live="polite" hidden>IP скопирован</div>
-  <script src="script.js"></script>
-</body>
+
+  <div class="toast" hidden>IP скопирован</div>
+  <script src="script.js"></script></body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-

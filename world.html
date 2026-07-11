@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мир - MineReam</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header" data-nav>
+      <div class="header-inner">
+        <a class="brand" href="index.html" aria-label="MineReam Mediavel">
+          <img src="assets/mr-logo.webp" alt="MineReam" class="brand-logo">
+        </a>
+        <nav class="main-nav" aria-label="Главная навигация">
+          <a href="index.html">Главная</a>
+          <a href="guides.html">Гайды</a>
+          <a href="world.html" aria-current="page">Мир</a>
+          <a href="rules.html">Правила</a>
+        </nav>
+        <div class="header-actions">
+          <a class="discord-link" href="https://discord.gg/bby9jnJpbg" target="_blank" rel="noreferrer">Discord</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="rules-page">
+      <section class="rules-hero">
+        <div class="container rules-hero-inner">
+          <h1>Карта мира</h1>
+        </div>
+      </section>
+
+      <section class="section map-section" id="generation">
+        <div class="container map-layout">
+          <button class="map-frame media-preview" type="button" data-lightbox-src="assets/world-map.webp" data-lightbox-title="Карта мира">
+            <img src="assets/world-map.webp" alt="Карта мира MineReam Mediavel">
+            <span>Карта мира</span>
+          </button>
+          <div class="biome-grid" aria-label="Биомы мира">
+            <button class="biome-card media-preview" type="button" data-lightbox-src="assets/pink-grove.webp" data-lightbox-title="Розовая роща"><img src="assets/pink-grove.webp" alt="Розовая роща"><span>Розовая роща</span></button>
+            <button class="biome-card media-preview" type="button" data-lightbox-src="assets/swamp-woods.webp" data-lightbox-title="Тёмный лес"><img src="assets/swamp-woods.webp" alt="Тёмный лес"><span>Тёмный лес</span></button>
+            <button class="biome-card media-preview" type="button" data-lightbox-src="assets/drylands.webp" data-lightbox-title="Сухие земли"><img src="assets/drylands.webp" alt="Сухие земли"><span>Сухие земли</span></button>
+            <button class="biome-card media-preview" type="button" data-lightbox-src="assets/winter-lake.webp" data-lightbox-title="Зимний край"><img src="assets/winter-lake.webp" alt="Зимний край"><span>Зимний край</span></button>
+            <button class="biome-card media-preview" type="button" data-lightbox-src="assets/mushroom-hills.webp" data-lightbox-title="Грибные холмы"><img src="assets/mushroom-hills.webp" alt="Грибные холмы"><span>Грибные холмы</span></button>
+            <button class="biome-card media-preview" type="button" data-lightbox-src="assets/blue-forest.webp" data-lightbox-title="Скалковый лес"><img src="assets/blue-forest.webp" alt="Скалковый лес"><span>Скалковый лес</span></button>
+            <button class="biome-card media-preview" type="button" data-lightbox-src="assets/swamp-biome.webp" data-lightbox-title="Болото"><img src="assets/swamp-biome.webp" alt="Болото"><span>Болото</span></button>
+            <button class="biome-card media-preview" type="button" data-lightbox-src="assets/end-biome.webp" data-lightbox-title="Энд"><img src="assets/end-biome.webp" alt="Энд"><span>Энд</span></button>
+            <button class="biome-card media-preview" type="button" data-lightbox-src="assets/bamboo-forest.webp" data-lightbox-title="Бамбуковый лес"><img src="assets/bamboo-forest.webp" alt="Бамбуковый лес"><span>Бамбуковый лес</span></button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="media-lightbox" data-lightbox hidden>
+    <button class="media-lightbox-close" type="button" data-lightbox-close aria-label="Закрыть">×</button>
+    <figure class="media-lightbox-card">
+      <img src="" alt="" data-lightbox-image>
+      <figcaption data-lightbox-caption></figcaption>
+    </figure>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
