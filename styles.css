@@ -1,4 +1,6 @@
-﻿:root {
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@300;400;500;700;900&display=swap');
+
+:root {
   --bg: #070b0f;
   --bg-soft: #0d1319;
   --panel: rgba(18, 25, 31, 0.82);
@@ -25,7 +27,7 @@ body {
     radial-gradient(circle at 8% 4%, rgba(79, 148, 252, 0.14), transparent 34%),
     radial-gradient(circle at 92% 18%, rgba(217, 163, 61, 0.11), transparent 30%),
     linear-gradient(180deg, #080c10 0%, #0b1015 48%, #080b0e 100%);
-  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  font-family: Montserrat, Inter, "Segoe UI", Arial, sans-serif;
   line-height: 1.5;
 }
 img { display: block; max-width: 100%; }
@@ -139,6 +141,7 @@ button { font: inherit; }
   text-transform: uppercase;
   letter-spacing: 0.12em;
 }
+h1, h2, h3, .brand { font-family: 'Cinzel', Georgia, serif; }
 h1, h2, h3, p { margin-top: 0; }
 h1 {
   margin-bottom: 20px;
@@ -1463,4 +1466,503 @@ h3 {
   box-sizing: border-box;
   padding: 8px;
   object-fit: contain;
+}
+
+/* ==========================================================================
+   КОММЕРЧЕСКИЕ СТИЛИ (ОНЛАЙН И ДОНАТ)
+   ========================================================================== */
+
+/* Индикатор статуса сервера */
+.status-indicator {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.status-indicator.online {
+  background-color: #6f8a55;
+  box-shadow: 0 0 10px rgba(111, 138, 85, 0.8);
+  animation: pulse-green 2s infinite;
+}
+.status-indicator.offline {
+  background-color: #8f2520;
+  box-shadow: 0 0 10px rgba(143, 37, 32, 0.8);
+}
+.server-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0 16px 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--muted);
+}
+.server-status .status-text {
+  color: var(--text);
+}
+
+/* Свечение онлайна в шапке */
+.header-online-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(111, 138, 85, 0.12);
+  border: 1px solid rgba(111, 138, 85, 0.35);
+  padding: 8px 14px;
+  color: #a4c08a;
+  font-size: 13px;
+  font-weight: 800;
+  border-radius: 2px;
+}
+
+@keyframes pulse-green {
+  0% {
+    box-shadow: 0 0 0 0 rgba(111, 138, 85, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(111, 138, 85, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(111, 138, 85, 0);
+  }
+}
+
+/* Донат Сетка и Карточки */
+.donate-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+.donate-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+.donate-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--gold);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.5), 0 0 30px rgba(217, 163, 61, 0.08);
+}
+.donate-card.popular {
+  border-color: rgba(217, 163, 61, 0.5);
+  box-shadow: 0 10px 30px rgba(217, 163, 61, 0.05);
+}
+.popular-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: var(--gold);
+  color: var(--bg);
+  font-size: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 5px 10px;
+  border-radius: 1px;
+  z-index: 10;
+}
+.donate-card-image-wrapper {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+}
+.donate-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.85) contrast(1.02);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.donate-card:hover .donate-card-image {
+  transform: scale(1.04);
+}
+.donate-card-price {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  background: rgba(7, 11, 15, 0.88);
+  border: 1px solid var(--line-strong);
+  color: var(--gold);
+  font-size: 26px;
+  font-weight: 900;
+  padding: 6px 16px;
+  backdrop-filter: blur(8px);
+  font-family: 'Cinzel', Georgia, serif;
+}
+.donate-card-price span {
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 400;
+}
+.donate-card-body {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.donate-card-body h3 {
+  font-size: 26px;
+  margin-bottom: 10px;
+  color: #f7f0df;
+}
+.donate-card-desc {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+.donate-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.donate-features li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.donate-features li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  color: var(--gold);
+  font-size: 12px;
+}
+
+/* Форма оформления заказа */
+.checkout-panel {
+  max-width: 600px;
+  margin: 60px auto 0;
+  background: var(--panel);
+  border: 1px solid rgba(173, 243, 253, 0.2);
+  padding: 36px;
+  box-shadow: var(--shadow);
+  animation: fadeIn 0.4s ease;
+}
+.checkout-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 16px;
+}
+.checkout-header h2 {
+  font-size: 24px;
+  margin: 0;
+}
+.checkout-close {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  transition: all 0.2s;
+}
+.checkout-close:hover {
+  color: var(--text);
+  border-color: var(--muted);
+}
+.checkout-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.checkout-form label {
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--cyan);
+}
+.checkout-form input {
+  background: rgba(7, 11, 15, 0.75);
+  border: 1px solid var(--line);
+  color: var(--text);
+  padding: 14px;
+  font-size: 16px;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+.checkout-form input:focus {
+  outline: none;
+  border-color: var(--cyan);
+}
+.input-tip {
+  font-size: 12px;
+  color: var(--faint);
+  margin: 4px 0 0 0;
+}
+.checkout-summary {
+  background: rgba(7, 11, 15, 0.4);
+  border: 1px solid var(--line);
+  padding: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+}
+.summary-line strong {
+  color: var(--gold);
+  font-family: 'Cinzel', Georgia, serif;
+  font-size: 18px;
+}
+
+/* Модальное окно платежа */
+.payment-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 7, 10, 0.92);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+}
+.payment-modal {
+  background: #0d1319;
+  border: 1px solid var(--gold);
+  padding: 48px 36px;
+  max-width: 460px;
+  width: min(460px, calc(100% - 36px));
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.8), 0 0 50px rgba(217, 163, 61, 0.15);
+  text-align: center;
+}
+.payment-modal-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid var(--line);
+  border-top-color: var(--gold);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.success-icon {
+  width: 72px;
+  height: 72px;
+  background: var(--green);
+  border-radius: 50%;
+  color: var(--bg);
+  font-size: 36px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px auto;
+  box-shadow: 0 0 20px rgba(111, 138, 85, 0.4);
+}
+.payment-modal-success h2 {
+  font-size: 24px;
+  color: #f7f0df;
+  margin-bottom: 12px;
+}
+.payment-modal-success p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.activation-steps {
+  background: rgba(111, 138, 85, 0.08);
+  border: 1px solid rgba(111, 138, 85, 0.2);
+  padding: 16px;
+  margin: 24px 0;
+  text-align: left;
+}
+.activation-steps strong {
+  color: var(--cyan);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .donate-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .header-actions {
+    display: none; /* Скрываем на мобилках для компактности */
+  }
+  .roles-grid, .steps-layout, .gallery-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+}
+
+/* ==========================================================================
+   СТИЛИ ДЛЯ НОВЫХ РАЗДЕЛОВ ГЛАВНОЙ СТРАНИЦЫ
+   ========================================================================== */
+
+/* Общие стили заголовков разделов */
+.section-head.centered {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 48px auto;
+}
+.lead.centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Блок "Выбери свой путь" (Роли) */
+.roles-section {
+  position: relative;
+  background: linear-gradient(180deg, rgba(7, 11, 15, 0.4) 0%, rgba(13, 19, 25, 0.9) 100%);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.roles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+.role-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  padding: 36px 28px;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.role-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(173, 243, 253, 0.4);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(173, 243, 253, 0.04);
+}
+.role-card-icon {
+  font-size: 44px;
+  margin-bottom: 20px;
+  line-height: 1;
+}
+.role-card h3 {
+  font-size: 22px;
+  color: #f7f0df;
+  margin-bottom: 12px;
+}
+.role-card p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Блок "Как начать играть" (Пошаговый гайд) */
+.start-section {
+  background: linear-gradient(180deg, rgba(13, 19, 25, 0.9) 0%, rgba(7, 11, 15, 0.4) 100%);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.steps-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+}
+.step-card {
+  background: rgba(18, 25, 31, 0.45);
+  border: 1px solid var(--line);
+  padding: 36px 30px;
+  position: relative;
+}
+.step-number {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  font-family: 'Cinzel', Georgia, serif;
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--cyan);
+  opacity: 0.28;
+}
+.step-card h3 {
+  font-size: 20px;
+  color: #f7f0df;
+  margin-bottom: 14px;
+}
+.step-card p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 0;
+}
+.step-card a {
+  color: var(--cyan);
+  text-decoration: underline;
+}
+.step-card a:hover {
+  color: var(--blue);
+}
+.centered-action {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+}
+.ip-large {
+  transform: scale(1.06);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Блок "Галерея" */
+.gallery-section {
+  border-bottom: 1px solid var(--line);
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+.gallery-item {
+  border: 1px solid var(--line);
+  padding: 8px;
+  background: var(--panel);
+  cursor: pointer;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  display: block;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.85) contrast(1.02);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.gallery-item:hover {
+  border-color: rgba(173, 243, 253, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+.gallery-item:hover img {
+  transform: scale(1.03);
 }
