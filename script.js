@@ -1,51 +1,85 @@
-
+// --- Site Loader Logic ---
 const siteLoader = document.querySelector('[data-site-loader]');
 const hideSiteLoader = () => {
   if (!siteLoader) return;
+  if (siteLoader.classList.contains('is-hidden')) return;
   siteLoader.classList.add('is-hidden');
   window.setTimeout(() => siteLoader.remove(), 520);
 };
 
-window.addEventListener('load', () => {
-  window.setTimeout(hideSiteLoader, 1700);
-});
-window.setTimeout(hideSiteLoader, 4200);
+// Wait for window load or fallback to 2.5s maximum
+window.addEventListener('load', hideSiteLoader);
+window.setTimeout(hideSiteLoader, 2500);
+
 const nav = document.querySelector('[data-nav]');
 const toast = document.querySelector('.toast');
 
-const setNavState = () => {
-  nav?.classList.toggle('is-scrolled', window.scrollY > 24);
+// --- Toast and Clipboard Copy Logic ---
+const showToast = () => {
+  if (!toast) return;
+  toast.hidden = false;
+  window.clearTimeout(window.__toastTimer);
+  window.__toastTimer = window.setTimeout(() => {
+    toast.hidden = true;
+  }, 1800);
 };
 
-window.addEventListener('scroll', setNavState, { passive: true });
-setNavState();
+const fallbackCopyText = (text, button) => {
+  const textArea = document.createElement('textarea');
+  textArea.value = text;
+  textArea.style.position = 'fixed';
+  document.body.appendChild(textArea);
+  textArea.focus();
+  textArea.select();
+  try {
+    const successful = document.execCommand('copy');
+    if (successful) {
+      showToast();
+    } else {
+      alert(`Пожалуйста, скопируйте вручную: ${text}`);
+    }
+  } catch (err) {
+    alert(`Пожалуйста, скопируйте вручную: ${text}`);
+  }
+  document.body.removeChild(textArea);
+};
 
 document.querySelectorAll('[data-copy]').forEach((button) => {
-  button.addEventListener('click', async () => {
+  button.addEventListener('click', () => {
     const value = button.getAttribute('data-copy');
-    try {
-      await navigator.clipboard.writeText(value);
-      if (toast) {
-        toast.hidden = false;
-        window.clearTimeout(window.__toastTimer);
-        window.__toastTimer = window.setTimeout(() => {
-          toast.hidden = true;
-        }, 1800);
-      }
-    } catch (error) {
-      button.textContent = value;
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(value).then(() => {
+        showToast();
+      }).catch(() => {
+        fallbackCopyText(value, button);
+      });
+    } else {
+      fallbackCopyText(value, button);
     }
   });
 });
 
+// --- Scroll Styling ---
+const setNavState = () => {
+  nav?.classList.toggle('is-scrolled', window.scrollY > 24);
+};
+window.addEventListener('scroll', setNavState, { passive: true });
+setNavState();
+
+// --- Lightbox with Focus Trap ---
 const lightbox = document.querySelector('[data-lightbox]');
 const lightboxImage = document.querySelector('[data-lightbox-image]');
 const lightboxCaption = document.querySelector('[data-lightbox-caption]');
 const lightboxClose = document.querySelector('[data-lightbox-close]');
+let lightboxTriggerElement = null;
 
 const closeLightbox = () => {
   if (!lightbox) return;
   lightbox.hidden = true;
+  if (lightboxTriggerElement) {
+    lightboxTriggerElement.focus();
+    lightboxTriggerElement = null;
+  }
 };
 
 document.querySelectorAll('[data-lightbox-src]').forEach((button) => {
@@ -56,7 +90,9 @@ document.querySelectorAll('[data-lightbox-src]').forEach((button) => {
     lightboxImage.src = src;
     lightboxImage.alt = title;
     lightboxCaption.textContent = title;
+    lightboxTriggerElement = button;
     lightbox.hidden = false;
+    lightboxClose?.focus();
   });
 });
 
@@ -64,15 +100,23 @@ lightboxClose?.addEventListener('click', closeLightbox);
 lightbox?.addEventListener('click', (event) => {
   if (event.target === lightbox) closeLightbox();
 });
-window.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape') closeLightbox();
-});
+
+if (lightbox) {
+  lightbox.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeLightbox();
+    }
+    if (e.key === 'Tab') {
+      e.preventDefault();
+      lightboxClose?.focus();
+    }
+  });
+}
 
 // --- Minecraft Server Status ---
 const fetchServerStatus = async () => {
   const ip = 'play.mineream.ru';
   const headerBadge = document.getElementById('header-online-badge');
-  const statusContainer = document.getElementById('server-status-container');
   const statusIndicator = document.getElementById('status-indicator');
   const statusText = document.getElementById('status-text');
 
@@ -85,14 +129,14 @@ const fetchServerStatus = async () => {
       const onlinePlayers = data.players.online;
       const maxPlayers = data.players.max;
 
-      // Update Header Badge
+      // Update Header Badge (if exists)
       if (headerBadge) {
         const countSpan = headerBadge.querySelector('.online-count');
         if (countSpan) countSpan.textContent = `${onlinePlayers} онлайн`;
         headerBadge.style.display = 'flex';
       }
 
-      // Update Homepage Card Status
+      // Update Hero status display
       if (statusIndicator && statusText) {
         statusIndicator.className = 'status-indicator online';
         statusText.textContent = `Сервер онлайн • Игроков: ${onlinePlayers} / ${maxPlayers}`;
@@ -157,17 +201,18 @@ const initFaqAccordion = () => {
   });
 };
 
-// Run when DOM loaded
-document.addEventListener('DOMContentLoaded', () => {
+// --- Single Safe Initialization ---
+let isInitialized = false;
+const initAll = () => {
+  if (isInitialized) return;
+  isInitialized = true;
   fetchServerStatus();
   initMobileNav();
   initFaqAccordion();
-});
-// Fallback if DOMContentLoaded already fired
-if (document.readyState === 'interactive' || document.readyState === 'complete') {
-  fetchServerStatus();
-  initMobileNav();
-  initFaqAccordion();
+};
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initAll);
+} else {
+  initAll();
 }
-
-

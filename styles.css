@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;700;900&display=swap');
+
 
 :root {
   --bg: #070b0f;
@@ -2132,6 +2132,14 @@ h3 {
   transform: translateY(-7px) rotate(-45deg);
 }
 
+/* Скрытие/отображение элементов для десктопа/мобильного в шапке */
+.mobile-only-icon {
+  display: none;
+}
+.desktop-only {
+  display: inline;
+}
+
 @media (max-width: 768px) {
   .nav-toggle {
     display: flex;
@@ -2165,7 +2173,20 @@ h3 {
     color: var(--cyan);
   }
   .header-actions {
+    display: flex !important;
+    align-items: center;
+    margin-right: 12px;
+  }
+  .desktop-only {
     display: none;
+  }
+  .mobile-only-icon {
+    display: block;
+    color: var(--cyan);
+    transition: color 0.2s;
+  }
+  .mobile-only-icon:hover {
+    color: var(--text);
   }
 }
 

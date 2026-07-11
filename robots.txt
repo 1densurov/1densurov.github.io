@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mineream.ru/sitemap.xml
