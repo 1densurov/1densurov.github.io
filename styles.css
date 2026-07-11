@@ -1380,3 +1380,87 @@ h3 {
   .private-tool-card { grid-template-columns: 1fr; }
   .private-tool-card img { width: 128px; height: 128px; }
 }
+.map-frame {
+  aspect-ratio: 1 / 1;
+  background: rgba(7, 11, 15, 0.58);
+}
+.map-frame img {
+  object-fit: contain;
+  aspect-ratio: auto;
+  padding: 10px;
+}
+.map-frame.media-preview:hover img,
+.map-frame.media-preview:focus-visible img {
+  transform: none;
+}
+/* MineReam centered hero/video controls */
+.hero-copy {
+  display: grid;
+  justify-items: start;
+}
+.hero-copy .hero-actions {
+  width: min(820px, 100%);
+  justify-content: center;
+}
+.video-play {
+  left: 50%;
+  bottom: 50%;
+  transform: translate(-50%, 50%);
+  min-width: 170px;
+  justify-content: center;
+  text-align: center;
+}
+.video-link:hover .video-play {
+  transform: translate(-50%, 50%);
+}
+@media (max-width: 640px) {
+  .hero-copy .hero-actions {
+    width: 100%;
+  }
+}
+/* Centered inner page titles */
+.rules-hero-inner {
+  margin-inline: auto;
+  text-align: center;
+}
+.rules-hero p {
+  margin-inline: auto;
+}
+/* Guide text cards and left-aligned hero CTA */
+.guide-card-text {
+  grid-template-columns: 1fr;
+  min-height: 160px;
+  position: relative;
+}
+.guide-card-text::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(173, 243, 253, 0.09), transparent 42%);
+  pointer-events: none;
+}
+.guide-card-text div {
+  position: relative;
+}
+.hero-copy .hero-actions {
+  width: auto;
+  justify-content: flex-start;
+}
+/* Square world map frame */
+.map-layout {
+  align-items: start;
+}
+.map-frame {
+  align-self: start;
+  aspect-ratio: 1 / 1;
+  display: grid;
+  background: linear-gradient(180deg, rgba(18, 25, 31, 0.82), rgba(7, 11, 15, 0.74));
+}
+.map-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+  object-fit: contain;
+}
