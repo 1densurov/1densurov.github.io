@@ -2155,8 +2155,22 @@ h3 {
 }
 
 @media (max-width: 768px) {
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
   .nav-toggle {
     display: flex;
+    order: 3;
+  }
+  .header-actions {
+    display: flex !important;
+    align-items: center;
+    order: 2;
+    margin-left: auto;
+    margin-right: 4px;
   }
   .main-nav {
     display: none;
@@ -2185,11 +2199,6 @@ h3 {
   .main-nav a:hover {
     background: transparent;
     color: var(--cyan);
-  }
-  .header-actions {
-    display: flex !important;
-    align-items: center;
-    margin-right: 12px;
   }
   .desktop-only {
     display: none;
@@ -2449,4 +2458,25 @@ h3 {
   border-color: rgba(173, 243, 253, 0.25) !important;
   background: rgba(173, 243, 253, 0.02) !important;
   box-shadow: 0 0 20px rgba(173, 243, 253, 0.05);
+}
+
+/* Кастомный скроллбар для ПК (только на устройствах с мышью) */
+@media (pointer: fine) {
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #070b0f;
+    border-left: 1px solid rgba(232, 236, 228, 0.08);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(217, 163, 61, 0.2);
+    border: 1px solid rgba(217, 163, 61, 0.35);
+    transition: background 0.2s;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(217, 163, 61, 0.4);
+    border-color: var(--gold);
+  }
 }
