@@ -2341,6 +2341,19 @@ h3 {
   justify-content: space-between;
   gap: 20px;
 }
+.widget-cta-text {
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.55;
+  margin: 0;
+  border-left: 2px solid var(--cyan);
+  padding-left: 14px;
+}
+.widget-cta-text strong {
+  color: var(--text);
+  display: block;
+  margin-bottom: 4px;
+}
 .widget-header {
   display: flex;
   align-items: center;
