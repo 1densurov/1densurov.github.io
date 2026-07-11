@@ -201,12 +201,62 @@ const initFaqAccordion = () => {
   });
 };
 
+// --- Discord Live Widget Logic ---
+const fetchDiscordWidget = async () => {
+  const guildId = '931925987678113872'; // Testing ID provided by user
+  const countSpan = document.getElementById('discord-online-count');
+  const membersList = document.getElementById('discord-members-list');
+  const inviteLink = document.getElementById('discord-widget-invite');
+
+  if (!countSpan && !membersList) return; // Not on the page with widget
+
+  try {
+    const res = await fetch(`https://discord.com/api/guilds/${guildId}/widget.json`);
+    if (!res.ok) throw new Error('Failed to load Discord widget');
+    const data = await res.json();
+
+    // Update online presence count
+    if (countSpan) {
+      countSpan.innerHTML = `<span class="presence-dot"></span>${data.presence_count || 0} онлайн`;
+      countSpan.classList.add('online');
+    }
+
+    // Set correct instant invite link
+    if (inviteLink && data.instant_invite) {
+      inviteLink.href = data.instant_invite;
+    }
+
+    // Populate active online members avatars
+    if (membersList && data.members) {
+      membersList.innerHTML = '';
+      // Limit to 12 active members
+      const activeMembers = data.members.slice(0, 12);
+      activeMembers.forEach(member => {
+        const item = document.createElement('div');
+        item.className = 'widget-member-avatar';
+        item.title = member.username;
+        item.innerHTML = `
+          <img src="${member.avatar_url}" alt="${member.username}" loading="lazy">
+          <span class="member-status-dot ${member.status}"></span>
+        `;
+        membersList.appendChild(item);
+      });
+    }
+  } catch (err) {
+    console.warn('Failed to fetch Discord widget:', err);
+    if (countSpan) {
+      countSpan.textContent = 'Сообщество MineReam';
+    }
+  }
+};
+
 // --- Single Safe Initialization ---
 let isInitialized = false;
 const initAll = () => {
   if (isInitialized) return;
   isInitialized = true;
   fetchServerStatus();
+  fetchDiscordWidget();
   initMobileNav();
   initFaqAccordion();
 };

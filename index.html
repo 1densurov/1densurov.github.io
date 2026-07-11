@@ -309,16 +309,41 @@
         </div>
       </section>
 
-      <!-- Video Section -->
-      <section class="section video-section">
+      <!-- Community Hub Section -->
+      <section class="section community-section" id="community">
         <div class="container section-head centered">
-          <p class="eyebrow">Трейлер проекта</p>
-          <h2>Видео-превью MineReam</h2>
+          <p class="eyebrow">Сообщество</p>
+          <h2>Жизнь вне игры</h2>
+          <p class="lead centered">Посмотри наш трейлер и присоединяйся к Discord-серверу для общения с игроками.</p>
         </div>
-        <div class="container video-panel single-video-panel">
-          <div class="video-frame">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/HEm90byZzSM" title="Последний из Дварфов | MineReam Medieval" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div class="container community-grid">
+          <div class="video-wrapper">
+            <div class="video-frame">
+              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/HEm90byZzSM" title="Последний из Дварфов | MineReam Medieval" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
           </div>
+
+          <!-- Интерактивный Discord виджет -->
+          <article class="discord-widget-card" id="discord-widget">
+            <div class="widget-header">
+              <img src="assets/mr-logo.webp" alt="" class="widget-logo" width="40" height="40" loading="lazy">
+              <div class="widget-header-text">
+                <h3 class="widget-title">MineReam Medieval</h3>
+                <span class="widget-status" id="discord-online-count">Загрузка сообщества...</span>
+              </div>
+            </div>
+            
+            <div class="widget-members-preview" id="discord-members-list">
+              <!-- Заполняется автоматически через API -->
+            </div>
+
+            <div class="widget-footer">
+              <a href="https://discord.gg/bby9jnJpbg" target="_blank" rel="noreferrer" class="button primary" id="discord-widget-invite">
+                Войти в Discord
+                <span class="sr-only">(откроется в новой вкладке)</span>
+              </a>
+            </div>
+          </article>
         </div>
       </section>
 
