@@ -2085,3 +2085,204 @@ h3 {
     width: 100%;
   }
 }
+
+/* ==========================================================================
+   A11Y, MOBILE MENU, FAQ & FOOTER STYLES
+   ========================================================================== */
+
+/* Скрытие для скринридеров */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Бургер-меню */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 100;
+}
+.nav-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--text);
+  transition: all 0.25s ease;
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: rgba(7, 11, 15, 0.98);
+    border-bottom: 1px solid var(--line);
+    padding: 20px;
+    gap: 12px;
+    align-items: stretch;
+    z-index: 99;
+    backdrop-filter: blur(14px);
+  }
+  .main-nav.is-active {
+    display: flex;
+  }
+  .main-nav a {
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px solid rgba(232, 236, 228, 0.05);
+  }
+  .main-nav a:hover {
+    background: transparent;
+    color: var(--cyan);
+  }
+  .header-actions {
+    display: none;
+  }
+}
+
+/* Секция FAQ (Аккордеоны) */
+.faq-section {
+  background: linear-gradient(180deg, rgba(7, 11, 15, 0.4) 0%, rgba(13, 19, 25, 0.9) 100%);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.faq-layout {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.faq-item {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  transition: border-color 0.25s ease;
+}
+.faq-item:hover {
+  border-color: rgba(173, 243, 253, 0.3);
+}
+.faq-trigger {
+  width: 100%;
+  background: transparent;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 26px;
+  cursor: pointer;
+  text-align: left;
+  color: var(--text);
+  font-size: 18px;
+  font-weight: 700;
+  font-family: inherit;
+  transition: color 0.2s;
+}
+.faq-trigger:hover {
+  color: var(--cyan);
+}
+.faq-icon {
+  font-size: 18px;
+  color: var(--gold);
+}
+.faq-content {
+  padding: 0 26px 22px 26px;
+  border-top: 1px solid rgba(232, 236, 228, 0.05);
+  animation: fadeIn 0.3s ease;
+}
+.faq-content p {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 12px 0 0 0;
+}
+
+/* Обновленный футер */
+.site-footer {
+  background: #05080c;
+  border-top: 1px solid var(--line);
+  padding: 60px 0 30px 0;
+  margin-top: 80px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+  border-bottom: 1px solid rgba(232, 236, 228, 0.08);
+  padding-bottom: 40px;
+  margin-bottom: 30px;
+}
+.footer-brand p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 16px 0 0 0;
+  max-width: 340px;
+}
+.footer-nav h4, .footer-socials h4 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 18px;
+  color: #f7f0df;
+  margin: 0 0 20px 0;
+  font-weight: 700;
+}
+.footer-links, .footer-socials {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.footer-links a, .footer-socials a {
+  color: var(--muted);
+  font-size: 14px;
+  transition: color 0.2s;
+}
+.footer-links a:hover, .footer-socials a:hover {
+  color: var(--cyan);
+}
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--faint);
+  font-size: 13px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .footer-brand p {
+    max-width: 100%;
+  }
+}

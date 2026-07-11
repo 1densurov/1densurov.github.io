@@ -112,93 +112,62 @@ const fetchServerStatus = async () => {
   }
 };
 
-// --- Donate Page Logic ---
-const initDonateLogic = () => {
-  const chooseButtons = document.querySelectorAll('.donate-choose-btn');
-  const checkoutSection = document.getElementById('checkout-section');
-  const summaryTierName = document.getElementById('summary-tier-name');
-  const summaryTierPrice = document.getElementById('summary-tier-price');
-  const checkoutForm = document.getElementById('checkout-form');
-  const cancelCheckoutBtn = document.getElementById('btn-cancel-checkout');
+// --- Mobile Navigation Menu Toggle ---
+const initMobileNav = () => {
+  const navToggle = document.getElementById('nav-toggle');
+  const mainNav = document.querySelector('.main-nav');
   
-  const paymentModal = document.getElementById('payment-modal');
-  const paymentLoader = document.getElementById('payment-loader');
-  const paymentSuccess = document.getElementById('payment-success');
-  const closePaymentModalBtn = document.getElementById('btn-close-payment-modal');
-  const playerNickConfirm = document.getElementById('player-nick-confirm');
-  
-  let selectedTier = '';
-  let selectedPrice = 0;
+  if (navToggle && mainNav) {
+    navToggle.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', !expanded);
+      mainNav.classList.toggle('is-active');
+    });
 
-  if (chooseButtons.length === 0) return; // Not on donate page
-
-  chooseButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      selectedTier = btn.getAttribute('data-tier');
-      selectedPrice = btn.getAttribute('data-price');
-      
-      let tierDisplayName = 'Ранг';
-      if (selectedTier === 'squire') tierDisplayName = 'Сквайр';
-      if (selectedTier === 'knight') tierDisplayName = 'Рыцарь';
-      if (selectedTier === 'baron') tierDisplayName = 'Барон';
-
-      if (summaryTierName) summaryTierName.textContent = tierDisplayName;
-      if (summaryTierPrice) summaryTierPrice.textContent = `${selectedPrice} ₽`;
-      
-      if (checkoutSection) {
-        checkoutSection.style.display = 'block';
-        checkoutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!navToggle.contains(e.target) && !mainNav.contains(e.target)) {
+        navToggle.setAttribute('aria-expanded', 'false');
+        mainNav.classList.remove('is-active');
       }
-    });
-  });
-
-  if (cancelCheckoutBtn && checkoutSection) {
-    cancelCheckoutBtn.addEventListener('click', () => {
-      checkoutSection.style.display = 'none';
-    });
-  }
-
-  if (checkoutForm) {
-    checkoutForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const nicknameInput = document.getElementById('mc-nickname');
-      const nickname = nicknameInput ? nicknameInput.value.trim() : '';
-
-      if (!nickname) return;
-
-      if (paymentModal && paymentLoader && paymentSuccess) {
-        paymentModal.style.display = 'flex';
-        paymentLoader.style.display = 'flex';
-        paymentSuccess.style.display = 'none';
-
-        // Simulate API call to checkout gateway
-        setTimeout(() => {
-          paymentLoader.style.display = 'none';
-          paymentSuccess.style.display = 'block';
-          if (playerNickConfirm) playerNickConfirm.textContent = nickname;
-        }, 2200);
-      }
-    });
-  }
-
-  if (closePaymentModalBtn && paymentModal && checkoutSection && checkoutForm) {
-    closePaymentModalBtn.addEventListener('click', () => {
-      paymentModal.style.display = 'none';
-      checkoutSection.style.display = 'none';
-      checkoutForm.reset();
     });
   }
 };
 
-// Run when script loaded
+// --- FAQ Accordion Logic ---
+const initFaqAccordion = () => {
+  const faqTriggers = document.querySelectorAll('.faq-trigger');
+  
+  faqTriggers.forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const expanded = trigger.getAttribute('aria-expanded') === 'true';
+      const targetId = trigger.getAttribute('aria-controls');
+      const content = document.getElementById(targetId);
+      const icon = trigger.querySelector('.faq-icon');
+
+      // Toggle state
+      trigger.setAttribute('aria-expanded', !expanded);
+      if (icon) {
+        icon.textContent = expanded ? '＋' : '－';
+      }
+      if (content) {
+        content.hidden = expanded;
+      }
+    });
+  });
+};
+
+// Run when DOM loaded
 document.addEventListener('DOMContentLoaded', () => {
   fetchServerStatus();
-  initDonateLogic();
+  initMobileNav();
+  initFaqAccordion();
 });
 // Fallback if DOMContentLoaded already fired
 if (document.readyState === 'interactive' || document.readyState === 'complete') {
   fetchServerStatus();
-  initDonateLogic();
+  initMobileNav();
+  initFaqAccordion();
 }
 
 
