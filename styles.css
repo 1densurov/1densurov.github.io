@@ -103,7 +103,7 @@ button { font: inherit; }
 .hero-section {
   position: relative;
   min-height: 920px;
-  padding: 150px 0 96px;
+  padding: 110px 0 96px;
 }
 .hero-bg {
   position: absolute;
@@ -128,8 +128,8 @@ button { font: inherit; }
 .hero-layout {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 500px);
-  gap: clamp(28px, 5vw, 72px);
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 460px);
+  gap: clamp(48px, 7vw, 110px);
   align-items: center;
 }
 .hero-copy { padding-top: 36px; }
@@ -142,7 +142,7 @@ button { font: inherit; }
   letter-spacing: 0.12em;
 }
 h1, .brand { font-family: 'Cinzel', Georgia, serif; }
-h2, h3, .rules-block h2 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 700; }
+h2, h3, .rules-block h2 { font-family: 'Cormorant Unicase', Georgia, serif; font-weight: 700; }
 h1, h2, h3, p { margin-top: 0; }
 h1 {
   margin-bottom: 20px;
@@ -2289,7 +2289,7 @@ h3 {
   max-width: 340px;
 }
 .footer-nav h4, .footer-socials h4 {
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: 'Cormorant Unicase', Georgia, serif;
   font-size: 18px;
   color: #f7f0df;
   margin: 0 0 20px 0;
