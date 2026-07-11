@@ -1991,6 +1991,15 @@ h3 {
   flex-wrap: wrap;
   gap: 12px;
 }
+.hero-discord-hint {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.85;
+}
 .hero-subtext {
   display: flex;
   flex-direction: column;
@@ -2434,4 +2443,10 @@ h3 {
     grid-template-columns: 1fr;
     gap: 24px;
   }
+}
+
+.highlight-step {
+  border-color: rgba(173, 243, 253, 0.25) !important;
+  background: rgba(173, 243, 253, 0.02) !important;
+  box-shadow: 0 0 20px rgba(173, 243, 253, 0.05);
 }
