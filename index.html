@@ -1,81 +1,28 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MineReam Medieval — Средневековый Minecraft RP Сервер</title>
-  <meta name="description" content="MineReam Medieval — средневековый RP сервер Minecraft в России (Java Edition 1.21.1) с кастомной картой, голосовым чатом и экономикой душ. Начни играть бесплатно!">
-  
-  <link rel="icon" type="image/webp" href="assets/mr-logo.webp">
-  <link rel="apple-touch-icon" href="assets/mr-logo.webp">
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="canonical" href="https://mineream.ru/">
-  <meta name="theme-color" content="#070b0f">
-  
-  <!-- Font Preconnect & Preload -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cormorant+Unicase:wght@400;600;700&family=Montserrat:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-
-  <!-- Preload Hero Image (LCP) -->
-  <link rel="preload" as="image" href="assets/hero-world.webp" fetchpriority="high">
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://mineream.ru/">
-  <meta property="og:title" content="MineReam Medieval — Средневековый Minecraft RP Сервер">
-  <meta property="og:description" content="Уникальный средневековый RP-сервер Minecraft с кастомным миром, собственной экономикой душ и входом через Discord. Начни свое приключение уже сегодня!">
-  <meta property="og:image" content="https://mineream.ru/assets/hero-world.webp">
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://mineream.ru/">
-  <meta property="twitter:title" content="MineReam Medieval — Средневековый Minecraft RP Сервер">
-  <meta property="twitter:description" content="Уникальный средневековый RP-сервер Minecraft с кастомным миром, собственной экономикой душ и входом через Discord. Начни свое приключение уже сегодня!">
-  <meta property="twitter:image" content="https://mineream.ru/assets/hero-world.webp">
-
-  <!-- Schema.org Microdata -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "VideoGame",
-    "name": "MineReam Medieval",
-    "description": "Ролевой средневековый сервер Minecraft (Java Edition) с уникальной экономикой душ, кастомными островами и голосовым чатом.",
-    "genre": "Role-playing game (RPG)",
-    "playMode": "MultiPlayer",
-    "gamePlatform": "PC game",
-    "applicationCategory": "Game",
-    "operatingSystem": "Windows, macOS, Linux",
-    "author": {
-      "@type": "Organization",
-      "name": "MineReam Team",
-      "url": "https://mineream.ru"
-    }
-  }
-  </script>
-
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>MineReam Mediavel</title>
+  <meta name="description" content="MineReam Mediavel - средневековый RP сервер Minecraft с кастомным миром, Discord-входом и живой ролью.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body id="top">
   <div class="site-loader" data-site-loader>
     <div class="site-loader-glow"></div>
-    <img src="assets/mineream-prefix.webp" alt="MineReam Medieval" class="site-loader-logo" width="200" height="200">
+    <img src="assets/mineream-prefix.webp" alt="MineReam Mediavel" class="site-loader-logo">
     <div class="site-loader-line"><span></span></div>
   </div>
 
   <div class="page-shell">
     <header class="site-header" data-nav>
       <div class="header-inner">
-        <a class="brand" href="index.html" aria-label="MineReam Medieval">
-          <img src="assets/mr-logo.webp" alt="MineReam" class="brand-logo" width="108" height="52">
+        <a class="brand" href="index.html" aria-label="MineReam Mediavel">
+          <img src="assets/mr-logo.webp" alt="MineReam" class="brand-logo">
         </a>
-        
-        <button class="nav-toggle" id="nav-toggle" aria-label="Открыть меню" aria-expanded="false" type="button">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-
         <nav class="main-nav" aria-label="Главная навигация">
           <a href="index.html" aria-current="page">Главная</a>
           <a href="guides.html">Гайды</a>
@@ -83,298 +30,193 @@
           <a href="rules.html">Правила</a>
         </nav>
         <div class="header-actions">
-          <a class="discord-link" href="https://discord.gg/bby9jnJpbg" target="_blank" rel="noreferrer" aria-label="Войти в Discord для авторизации">
-            <span class="desktop-only">Вход через Discord</span>
-            <svg class="mobile-only-icon" width="20" height="20" viewBox="0 0 127.14 96.36" fill="currentColor" aria-hidden="true">
-              <path d="M107.7,8.07A105.15,105.15,0,0,0,77.26,0a77.19,77.19,0,0,0-3.3,6.83A96.67,96.67,0,0,0,53.22,6.83,77.19,77.19,0,0,0,49.88,0,105.15,105.15,0,0,0,19.44,8.07C3.66,31.58-1.86,54.65,1,77.53A105.73,105.73,0,0,0,32,96.36a77.7,77.7,0,0,0,6.63-10.85,68.43,68.43,0,0,1-10.5-5c.87-.64,1.72-1.31,2.53-2a75.46,75.46,0,0,0,73.1,0c.81.69,1.66,1.36,2.53,2a68.86,68.86,0,0,1-10.5,5,76.68,76.68,0,0,0,6.63,10.85,105.73,105.73,0,0,0,31-18.83C129.87,48.24,124.08,25.32,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53S36.18,40.36,42.45,40.36,53.83,46,53.83,53,48.72,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.24,60,73.24,53S78.41,40.36,84.69,40.36,96.07,46,96.07,53,91,65.69,84.69,65.69Z"/>
-            </svg>
-            <span class="sr-only">(откроется в новой вкладке)</span>
-          </a>
+          <a class="discord-link" href="https://discord.gg/bby9jnJpbg" target="_blank" rel="noreferrer">Discord</a>
         </div>
       </div>
     </header>
     <main>
-      
-      <!-- Hero Section -->
       <section class="hero-section">
         <div class="hero-bg" aria-hidden="true">
-          <img src="assets/hero-world.webp" alt="" width="1920" height="1080">
+          <img src="assets/hero-world.webp" alt="">
         </div>
         <div class="container hero-layout">
           <div class="hero-copy">
-            <p class="eyebrow">Средневековый RP-сервер Minecraft</p>
-            <h1>MineReam Medieval</h1>
-            <p class="lead">Придумай персонажа, построй королевство, веди войны или торгуй в кастомном мире с собственной экономикой душ.</p>
-            
-            <div class="hero-buttons-wrapper">
-              <div class="hero-buttons">
-                <a class="button primary" href="#start-playing">Играть</a>
-                <a class="button secondary" href="https://discord.gg/bby9jnJpbg" target="_blank" rel="noreferrer">Discord <span class="sr-only">(откроется в новой вкладке)</span></a>
-              </div>
-              <p class="hero-discord-hint">💡 Вход на сервер защищён Discord-авторизацией бота</p>
+            <h1>MineReam Mediavel</h1>
+            <p>Средневековый RP сервер Minecraft с кастомным миром, персонажами и выживанием.</p>
+            <div class="hero-actions">
+              <a class="hero-action hero-action-primary" href="#start-playing">Начать играть</a>
             </div>
           </div>
-
-          <!-- Карточка сервера справа -->
           <article class="server-card" id="server">
-            <img src="assets/spawn-bridge.webp" alt="Спавн MineReam" class="server-card-image" width="480" height="270">
+            <img src="assets/spawn-bridge.webp" alt="Спавн MineReam Mediavel" class="server-card-image">
             <div class="server-card-body">
-              <h3>Параметры входа</h3>
-              <p style="font-size: 13.5px; color: var(--muted); margin: -4px 0 12px 0;">Скопируйте IP и вставьте в клиенте Minecraft</p>
+              <h2>Параметры входа</h2>
+              <div class="server-meta">
+                <span>Java 1.21.11</span>
+                <span>Discord авторизация</span>
+                <span>Кастомный мир</span>
+              </div>
               <div class="server-ip-line">
                 <span>IP</span>
                 <strong>play.mineream.ru</strong>
-                <button data-copy="play.mineream.ru" type="button" aria-label="Скопировать IP адрес сервера play.mineream.ru">Скопировать</button>
+                <button data-copy="play.mineream.ru" type="button">Скопировать</button>
               </div>
-              <div class="hero-subtext" style="margin-top: 14px;">
-                <span>Java 1.21.11 • IP: play.mineream.ru</span>
-                <span class="hero-online-status" id="hero-online-status">
-                  <span class="status-indicator offline" id="status-indicator"></span>
-                  <span class="status-text" id="status-text">Проверка статуса...</span>
-                </span>
-              </div>
+              <span class="hero-online-status is-checking" id="hero-online-status" data-server-status role="status" aria-live="polite">
+                <span class="status-indicator" id="status-indicator" aria-hidden="true"></span>
+                <span class="status-text" id="status-text" data-server-status-text>Проверяем сервер • Игроков: — / 99</span>
+              </span>
             </div>
           </article>
         </div>
       </section>
 
-      <!-- Roles Section -->
-      <section class="section roles-section" id="roles">
-        <div class="container section-head centered">
-          <p class="eyebrow">Свобода выбора</p>
-          <h2>Выбери свою роль</h2>
-          <p class="lead centered">Нет классов и жёстких рамок — стань тем, кем всегда хотел быть в средневековом мире.</p>
-        </div>
-        <div class="container roles-grid">
-          <article class="role-card" id="role-ruler">
-            <div class="role-card-icon">👑</div>
-            <h3>Правитель</h3>
-            <p>Основывай города и возводи замки, издавай законы, собирай налоги и веди внешнюю политику своих владений.</p>
-          </article>
-          <article class="role-card" id="role-merchant">
-            <div class="role-card-icon">💰</div>
-            <h3>Торговец</h3>
-            <p>Создавай торговые гильдии, контролируй рынки, вари элитные напитки и зарабатывай на торговле душами.</p>
-          </article>
-          <article class="role-card" id="role-warrior">
-            <div class="role-card-icon">⚔️</div>
-            <h3>Воин</h3>
-            <p>Служи короне или стань наёмником, участвуй в рыцарских турнирах и масштабных осадах городов.</p>
-          </article>
-          <article class="role-card" id="role-explorer">
-            <div class="role-card-icon">🗺️</div>
-            <h3>Исследователь</h3>
-            <p>Путешествуй по кастомным островам и опасным биомам, находи древние руины и скрытые сокровища.</p>
-          </article>
+      <section class="section quick-section">
+        <div class="container quick-showcase">
+          <button class="quick-showcase-image media-preview" type="button" data-lightbox-src="assets/mineream-short.webp" data-lightbox-title="MineReam Mediavel">
+            <img src="assets/mineream-short.webp" alt="MineReam Mediavel">
+          </button>
+          <div class="quick-showcase-body">
+            <h2>MineReam коротко</h2>
+            <div class="quick-feature-list">
+              <article>
+                <span>RP</span>
+                <div>
+                  <h3>Средневековье</h3>
+                  <p>Играй персонажем, а не просто ником в табе.</p>
+                </div>
+              </article>
+              <article>
+                <span>Мир</span>
+                <div>
+                  <h3>Кастомная генерация</h3>
+                  <p>Острова, биомы и места для поселений.</p>
+                </div>
+              </article>
+              <article>
+                <span>Души</span>
+                <div>
+                  <h3>Своя валюта</h3>
+                  <p>Осколки, фрагменты и великие души.</p>
+                </div>
+              </article>
+              <article>
+                <span>Вход</span>
+                <div>
+                  <h3>Через Discord</h3>
+                  <p>Доступ, связь и объявления в одном месте.</p>
+                </div>
+              </article>
+            </div>
+          </div>
         </div>
       </section>
 
-      <!-- Features Section -->
-      <section class="section features-section" id="features">
+      <section class="section start-playing-section" id="start-playing">
         <div class="container section-head centered">
-          <p class="eyebrow">Особенности сервера</p>
-          <h2>Чем уникален MineReam</h2>
+          <h2>Как начать</h2>
         </div>
-        <div class="container features-grid">
-          <article class="feature-card">
-            <span class="feature-icon">🛡️</span>
-            <h3>Ролевая игра</h3>
-            <p>Играй роль персонажа, а не просто ник. Твои решения влияют на политику, города и историю сервера.</p>
+        <div class="container start-steps-grid">
+          <article class="start-step-card">
+            <span class="start-step-number">01</span>
+            <div>
+              <h3>Вступи в Discord</h3>
+              <p>Присоединись к сообществу и получи роль MineReam — она нужна для доступа на основной сервер.</p>
+              <a class="start-step-link" href="https://discord.gg/bby9jnJpbg" target="_blank" rel="noreferrer">Открыть Discord ↗</a>
+            </div>
           </article>
-          <article class="feature-card">
-            <span class="feature-icon">🌍</span>
-            <h3>Кастомный мир</h3>
-            <p>Острова, уникальные биомы и места для городов — мир спроектирован под RP и политику.</p>
+          <article class="start-step-card">
+            <span class="start-step-number">02</span>
+            <div>
+              <h3>Получи код</h3>
+              <p>Зайди с Minecraft Java 1.21.11 на <button type="button" data-copy="play.mineream.ru">play.mineream.ru</button>. Сервер покажет код привязки.</p>
+            </div>
           </article>
-          <article class="feature-card">
-            <span class="feature-icon">💎</span>
-            <h3>Экономика душ</h3>
-            <p>Валюта душ: осколки, фрагменты и великие души для торговли с NPC и игроками.</p>
+          <article class="start-step-card">
+            <span class="start-step-number">03</span>
+            <div>
+              <h3>Создай персонажа</h3>
+              <p>Отправь код боту, пройди вступление и выбери уникальное средневековое имя на кириллице.</p>
+            </div>
           </article>
-          <article class="feature-card">
-            <span class="feature-icon">💬</span>
-            <h3>Связь с Discord</h3>
-            <p>Авторизация, внутриигровой voice-чат и интеграция с Discord для удобного общения.</p>
-          </article>
+        </div>
+        <div class="container start-connect-wrap">
+          <div class="start-connect-compact">
+            <span>IP сервера</span>
+            <strong>play.mineream.ru</strong>
+            <button class="start-copy-button" data-copy="play.mineream.ru" type="button">Скопировать</button>
+          </div>
+          <p>Для входа потребуется привязка Minecraft к Discord.</p>
         </div>
       </section>
 
-      <!-- Onboarding Section -->
-      <section class="section start-section" id="start-playing">
-        <div class="container section-head centered">
-          <p class="eyebrow">Быстрый старт</p>
-          <h2>Как начать играть</h2>
-          <p class="lead centered">Вход на сервер защищён Discord-авторизацией — это помогает нам держать RP-атмосферу и уютное комьюнити.</p>
-        </div>
-        <div class="container steps-layout">
-          <div class="step-card highlight-step" id="step-discord">
-            <span class="step-number">01</span>
-            <h3>Войди в Discord</h3>
-            <p>Присоединяйся к нашему <a href="https://discord.gg/bby9jnJpbg" target="_blank" rel="noreferrer">Discord <span class="sr-only">(откроется в новой вкладке)</span></a> — без этого шага вы не сможете пройти авторизацию бота и зайти в игру.</p>
-          </div>
-          <div class="step-card" id="step-verify">
-            <span class="step-number">02</span>
-            <h3>Пройди проверку</h3>
-            <p>Скопируй IP сервера, зайди в Minecraft и следуй инструкциям бота в Discord, чтобы получить доступ.</p>
-          </div>
-          <div class="step-card" id="step-character">
-            <span class="step-number">03</span>
-            <h3>Создай персонажа</h3>
-            <p>Пройди интро на сервере, выбери имя в духе сеттинга и определи свою роль в мире MineReam.</p>
-          </div>
-        </div>
-        <div class="container centered-action" style="display: flex; flex-direction: column; align-items: center; gap: 14px;">
-          <div class="server-ip-card">
-            <span class="ip-title">IP сервера</span>
-            <strong class="ip-value">play.mineream.ru</strong>
-            <button data-copy="play.mineream.ru" type="button" class="button secondary" aria-label="Скопировать IP адрес сервера play.mineream.ru">Скопировать</button>
-          </div>
-          <span style="font-size: 13px; color: var(--muted); opacity: 0.85; text-align: center;">⚠️ Важно: Для входа на сервер ваш никнейм должен быть привязан в Discord!</span>
-        </div>
-      </section>
-
-      <!-- Gallery Section -->
-      <section class="section gallery-section" id="gallery">
-        <div class="container section-head centered">
-          <p class="eyebrow">Атмосфера мира</p>
-          <h2>Жизнь на MineReam</h2>
-          <p class="lead centered">Посмотри на замки, города и пейзажи кастомного мира.</p>
-        </div>
-        <div class="container gallery-grid">
-          <button class="gallery-item media-preview" type="button" data-lightbox-src="assets/spawn-bridge.webp" data-lightbox-title="Мост на спавне MineReam" aria-label="Просмотреть скриншот: Мост на спавне MineReam">
-            <img src="assets/spawn-bridge.webp" alt="Спавн MineReam" width="400" height="250" loading="lazy">
-          </button>
-          <button class="gallery-item media-preview" type="button" data-lightbox-src="assets/pink-grove.webp" data-lightbox-title="Розовая роща" aria-label="Просмотреть скриншот: Розовая роща">
-            <img src="assets/pink-grove.webp" alt="Розовая роща" width="400" height="250" loading="lazy">
-          </button>
-          <button class="gallery-item media-preview" type="button" data-lightbox-src="assets/swamp-woods.webp" data-lightbox-title="Темный таинственный лес" aria-label="Просмотреть скриншот: Темный таинственный лес">
-            <img src="assets/swamp-woods.webp" alt="Темный лес" width="400" height="250" loading="lazy">
-          </button>
-          <button class="gallery-item media-preview" type="button" data-lightbox-src="assets/winter-lake.webp" data-lightbox-title="Замерзшее зимнее озеро" aria-label="Просмотреть скриншот: Замерзшее зимнее озеро">
-            <img src="assets/winter-lake.webp" alt="Зимний край" width="400" height="250" loading="lazy">
-          </button>
-          <button class="gallery-item media-preview" type="button" data-lightbox-src="assets/mushroom-hills.webp" data-lightbox-title="Грибные холмы" aria-label="Просмотреть скриншот: Грибные холмы">
-            <img src="assets/mushroom-hills.webp" alt="Грибные холмы" width="400" height="250" loading="lazy">
-          </button>
-          <button class="gallery-item media-preview" type="button" data-lightbox-src="assets/blue-forest.webp" data-lightbox-title="Скалковый лес под звездами" aria-label="Просмотреть скриншот: Скалковый лес под звездами">
-            <img src="assets/blue-forest.webp" alt="Скалковый лес" width="400" height="250" loading="lazy">
-          </button>
-        </div>
-      </section>
-
-      <!-- FAQ Section -->
       <section class="section faq-section" id="faq">
         <div class="container section-head centered">
-          <p class="eyebrow">Частые вопросы</p>
-          <h2>FAQ по игре</h2>
-          <p class="lead centered">Все, что вам нужно знать перед началом путешествия в мире MineReam.</p>
+          <h2>FAQ</h2>
         </div>
-        <div class="container faq-layout">
-          <div class="faq-item">
-            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-answer-license">
-              <span>Нужна ли лицензия для игры?</span>
-              <span class="faq-icon" aria-hidden="true">＋</span>
-            </button>
-            <div class="faq-content" id="faq-answer-license" hidden>
-              <p>Нет, наш сервер доступен как для владельцев лицензионных аккаунтов Minecraft, так и для игроков с пиратскими клиентами (TLauncher, Legacy и др.).</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-answer-rp">
-              <span>Как работает система RolePlay?</span>
-              <span class="faq-icon" aria-hidden="true">＋</span>
-            </button>
-            <div class="faq-content" id="faq-answer-rp" hidden>
-              <p>Мы поддерживаем легкий RP-режим. Вам не нужно писать сложные квенты или проходить жесткий отбор. Достаточно придумать имя персонажа в средневековом стиле, вести себя адекватно роли и уважать других игроков в голосовом чате.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-answer-wipes">
-              <span>Есть ли вайпы на сервере?</span>
-              <span class="faq-icon" aria-hidden="true">＋</span>
-            </button>
-            <div class="faq-content" id="faq-answer-wipes" hidden>
-              <p>Мы стараемся избегать полных вайпов карты. Развитие разделено на сезоны, при переходе между которыми сохраняется ключевой лор, достижения городов, а также накопленные великие души.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-answer-donate">
-              <span>Присутствует ли донат, влияющий на баланс?</span>
-              <span class="faq-icon" aria-hidden="true">＋</span>
-            </button>
-            <div class="faq-content" id="faq-answer-donate" hidden>
-              <p>Нет. Проект полностью некоммерческий и содержится исключительно на средства его создателя. На сервере нет платных админок, ресурсов или креатива в продаже.</p>
-            </div>
-          </div>
+        <div class="container faq-list">
+          <details class="faq-item">
+            <summary><span>Нужна ли лицензия Minecraft?</span><i aria-hidden="true">＋</i></summary>
+            <div class="faq-answer"><p>Сервер поддерживает лицензионные и автономные аккаунты. Лицензионный аккаунт распознаётся автоматически; для автономного при первом входе потребуется зарегистрировать пароль командами сервера.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary><span>Как устроен RolePlay?</span><i aria-hidden="true">＋</i></summary>
+            <div class="faq-answer"><p>Придумай средневековое имя на кириллице длиной от 5 до 18 символов и играй роль персонажа. Для сцен доступны локальный чат и команды <code>/me</code>, <code>/do</code>, <code>/try</code> и <code>/ooc</code>.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary><span>Какая версия нужна?</span><i aria-hidden="true">＋</i></summary>
+            <div class="faq-answer"><p>Minecraft Java Edition 1.21.11. Подключение с Bedrock Edition сейчас не поддерживается.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary><span>Нужно ли устанавливать моды?</span><i aria-hidden="true">＋</i></summary>
+            <div class="faq-answer"><p>Для обычного входа — нет. Для полноценного голосового RP и эмоций рекомендуются клиентские моды Simple Voice Chat и Emotecraft; ссылки есть в гайдах проекта.</p></div>
+          </details>
         </div>
       </section>
 
-      <!-- Community Hub Section -->
-      <section class="section community-section" id="community">
+      <section class="section video-section">
         <div class="container section-head centered">
-          <p class="eyebrow">Сообщество</p>
-          <h2>Жизнь вне игры</h2>
-          <p class="lead centered">Посмотри наш трейлер и присоединяйся к Discord-серверу для общения с игроками.</p>
+          <h2>Видео проекта</h2>
         </div>
-        <div class="container community-grid">
-          <div class="video-wrapper">
+        <div class="container video-gallery">
+          <article class="video-wrapper">
             <div class="video-frame">
-              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/HEm90byZzSM" title="Последний из Дварфов | MineReam Medieval" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-          </div>
-
-          <!-- Интерактивный Discord виджет -->
-          <article class="discord-widget-card" id="discord-widget">
-            <div class="widget-header">
-              <img src="assets/mr-logo.webp" alt="" class="widget-logo" width="40" height="40" loading="lazy">
-              <div class="widget-header-text">
-                <h3 class="widget-title">MineReam Medieval</h3>
-                <span class="widget-status" id="discord-online-count">Загрузка сообщества...</span>
-              </div>
-            </div>
-            
-            <p class="widget-cta-text"><strong>Вход на сервер только через Discord!</strong> Присоединяйся, чтобы общаться с игроками, следить за новостями проекта и получить код авторизации бота для первого захода в игру.</p>
-
-            <div class="widget-members-preview" id="discord-members-list">
-              <!-- Заполняется автоматически через API -->
-            </div>
-
-            <div class="widget-footer">
-              <a href="https://discord.gg/bby9jnJpbg" target="_blank" rel="noreferrer" class="button primary" id="discord-widget-invite">
-                Присоединиться к сообществу
-                <span class="sr-only">(откроется в новой вкладке)</span>
-              </a>
+              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/HEm90byZzSM" title="Видео MineReam Mediavel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
             </div>
           </article>
         </div>
       </section>
-
-      <!-- Footer Section -->
-      <footer class="site-footer">
-        <div class="container footer-grid">
-          <div class="footer-brand">
-            <img src="assets/mr-logo.webp" alt="MineReam" class="footer-logo" width="64" height="64" loading="lazy">
-            <p>Средневековый RP-сервер Minecraft с глубокой историей, кастомной картой и живым комьюнити.</p>
+      <footer class="site-footer site-footer-expanded">
+        <div class="container footer-main">
+          <div class="footer-about">
+            <img src="assets/mr-logo.webp" alt="Логотип MineReam" class="footer-logo" loading="lazy">
+            <p>Средневековый RP-сервер Minecraft с кастомным миром, живыми персонажами и общей историей игроков.</p>
           </div>
-          <div class="footer-nav">
-            <h4>Навигация</h4>
-            <nav class="footer-links" aria-label="Навигация в футере">
-              <a href="index.html">Главная</a>
+          <div class="footer-column">
+            <h3>Навигация</h3>
+            <nav aria-label="Основная навигация внизу страницы">
+              <a href="index.html" aria-current="page">Главная</a>
               <a href="guides.html">Гайды</a>
               <a href="world.html">Мир</a>
               <a href="rules.html">Правила</a>
             </nav>
           </div>
-          <div class="footer-socials">
-            <h4>Мы в сети</h4>
-            <a href="https://discord.gg/bby9jnJpbg" target="_blank" rel="noreferrer">Discord <span class="sr-only">(откроется в новой вкладке)</span></a>
-            <a href="https://www.youtube.com/watch?v=HEm90byZzSM" target="_blank" rel="noreferrer">YouTube <span class="sr-only">(откроется в новой вкладке)</span></a>
+          <div class="footer-column">
+            <h3>Игрокам</h3>
+            <nav aria-label="Разделы главной страницы">
+              <a href="#start-playing">Как начать</a>
+              <a href="#faq">Частые вопросы</a>
+              <a href="#server">IP сервера</a>
+            </nav>
+          </div>
+          <div class="footer-column">
+            <h3>Сообщество</h3>
+            <nav aria-label="Социальные ссылки">
+              <a href="https://discord.gg/bby9jnJpbg" target="_blank" rel="noreferrer">Discord ↗</a>
+              <a href="https://www.youtube.com/watch?v=HEm90byZzSM" target="_blank" rel="noreferrer">YouTube ↗</a>
+            </nav>
           </div>
         </div>
-        <div class="container footer-bottom">
+        <div class="container footer-inner">
           <span>© 2026 MineReam. Все права защищены.</span>
           <span>Не является официальным продуктом Mojang Studios.</span>
         </div>
@@ -382,7 +224,7 @@
     </main>
   </div>
 
-  <div class="media-lightbox" data-lightbox role="dialog" aria-modal="true" tabindex="-1" hidden>
+  <div class="media-lightbox" data-lightbox hidden>
     <button class="media-lightbox-close" type="button" data-lightbox-close aria-label="Закрыть">×</button>
     <figure class="media-lightbox-card">
       <img src="" alt="" data-lightbox-image>
@@ -390,7 +232,9 @@
     </figure>
   </div>
 
-  <div class="toast" id="toast-message" role="status" aria-live="polite" hidden>IP-адрес скопирован в буфер обмена</div>
-  <script src="script.js"></script>
-</body>
+  <button class="scroll-top-button" type="button" data-scroll-top aria-label="Прокрутить страницу наверх" hidden>
+    <span aria-hidden="true">↑</span>
+  </button>
+  <div class="toast" hidden>IP скопирован</div>
+  <script src="script.js"></script></body>
 </html>
