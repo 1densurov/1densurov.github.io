@@ -122,4 +122,55 @@ scrollTopButton?.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
 });
 
+// Brewery filters
+(() => {
+  const cards = Array.from(document.querySelectorAll("[data-recipe-card]"));
+  const search = document.querySelector("[data-brewery-search]");
+  const clear = document.querySelector("[data-brewery-clear]");
+  const status = document.querySelector("[data-brewery-status]");
+  const empty = document.querySelector("[data-brewery-empty]");
+  const filters = Array.from(document.querySelectorAll("[data-brewery-filter]"));
 
+  if (!cards.length || !search || !status) return;
+
+  let activeCategory = "all";
+
+  const update = () => {
+    const query = search.value.trim().toLowerCase();
+    let visible = 0;
+
+    cards.forEach((card) => {
+      const category = card.dataset.category || "";
+      const text = card.dataset.search || "";
+      const categoryMatch = activeCategory === "all" || category === activeCategory;
+      const searchMatch = !query || text.includes(query);
+      const show = categoryMatch && searchMatch;
+      card.hidden = !show;
+      if (show) visible += 1;
+    });
+
+    status.textContent = query || activeCategory !== "all"
+      ? `Найдено рецептов: ${visible}.`
+      : "Показаны все рецепты.";
+
+    if (clear) clear.hidden = !query && activeCategory === "all";
+    if (empty) empty.hidden = visible !== 0;
+  };
+
+  filters.forEach((button) => {
+    button.addEventListener("click", () => {
+      activeCategory = button.dataset.breweryFilter || "all";
+      filters.forEach((item) => item.classList.toggle("is-active", item === button));
+      update();
+    });
+  });
+
+  search.addEventListener("input", update);
+  clear?.addEventListener("click", () => {
+    search.value = "";
+    activeCategory = "all";
+    filters.forEach((item) => item.classList.toggle("is-active", item.dataset.breweryFilter === "all"));
+    update();
+    search.focus();
+  });
+})();
