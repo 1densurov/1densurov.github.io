@@ -2083,3 +2083,11 @@ h3 {
   color: var(--cyan);
   font-weight: 900;
 }
+
+
+.brewery-variant-note {
+  display: block;
+  color: var(--faint);
+  font-size: 12px;
+  margin-top: 6px;
+}
