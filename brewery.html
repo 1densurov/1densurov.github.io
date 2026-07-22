@@ -51,38 +51,128 @@
 
           <div class="guides-content">
 
-            <section class="guide-category" id="guide">
-              <h3>Как варить</h3>
-              <div class="brewery-guide-grid">
-                <article class="guide-card guide-card-text">
-                  <div>
+            <section class="guide-category brewery-howto" id="guide">
+              <h3>Как варить напитки</h3>
+              <div class="brewery-process-list">
+                <article class="brewery-process-card">
+                  <figure style="--guide-image: url('assets/brewery-boiling.webp')">
+                    <img src="assets/brewery-boiling.webp" alt="Варка напитка в котле" loading="lazy">
+                  </figure>
+                  <div class="brewery-process-content">
                     <time>01</time>
-                    <h4>Котёл</h4>
-                    <p>Налей воду, добавь ингредиенты и вари напиток нужное количество минут.</p>
+                    <h4>Варка в котле</h4>
+                    <p>С этого начинается любой напиток. В котёл добавляются вода, тепло и ингредиенты.</p>
+
+                    <div class="brewery-process-columns">
+                      <div>
+                        <h5>Что нужно</h5>
+                        <ul>
+                          <li>Котёл с водой.</li>
+                          <li>Источник огня под котлом.</li>
+                          <li>Ингредиенты из рецепта.</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h5>Действия</h5>
+                        <ol>
+                          <li>Наполните котёл водой.</li>
+                          <li>Разместите под ним огонь.</li>
+                          <li>Добавьте ингредиенты ПКМ по котлу.</li>
+                          <li>Подождите нужное время варки.</li>
+                          <li>Разлейте напиток в бутылочки.</li>
+                        </ol>
+                      </div>
+                    </div>
+
+                    <p class="brewery-guide-note">
+                      Источником тепла может быть огонь, лава, магма-блок или костёр.
+                    </p>
+                    <p class="brewery-guide-note is-danger">
+                      Если переварить напиток, результат может испортиться.
+                    </p>
                   </div>
                 </article>
-                <article class="guide-card guide-card-text">
-                  <div>
+
+                <article class="brewery-process-card">
+                  <figure style="--guide-image: url('assets/brewery-distillation.webp')">
+                    <img src="assets/brewery-distillation.webp" alt="Дистилляция напитка в варочной стойке" loading="lazy">
+                  </figure>
+                  <div class="brewery-process-content">
                     <time>02</time>
-                    <h4>Перегонка</h4>
-                    <p>Если рецепт требует перегонку, используй зельеварку.</p>
+                    <h4>Дистилляция</h4>
+                    <p>Нужна только тем рецептам, где указано количество прогонов.</p>
+
+                    <div class="brewery-process-columns">
+                      <div>
+                        <h5>Как выглядит</h5>
+                        <ol>
+                          <li>Поставьте бутылочки в варочную стойку.</li>
+                          <li>Положите светопыль в верхний слот.</li>
+                          <li>Дождитесь завершения цикла.</li>
+                          <li>Повторите, если рецепт требует ещё прогон.</li>
+                        </ol>
+                      </div>
+                      <div>
+                        <h5>На что влияет</h5>
+                        <ul>
+                          <li>Убирает грубость напитка.</li>
+                          <li>Помогает получить нужное качество.</li>
+                          <li>Для некоторых крепких напитков обязательна.</li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <p class="brewery-guide-note">
+                      Если в рецепте указано 0× перегонки, этот этап можно пропустить.
+                    </p>
                   </div>
                 </article>
-                <article class="guide-card guide-card-text">
-                  <div>
+
+                <article class="brewery-process-card">
+                  <figure style="--guide-image: url('assets/brewery-aging.webp')">
+                    <img src="assets/brewery-aging.webp" alt="Выдержка напитков в бочках" loading="lazy">
+                  </figure>
+                  <div class="brewery-process-content">
                     <time>03</time>
-                    <h4>Бочка</h4>
-                    <p>Дерево бочки и выдержка влияют на итоговое качество.</p>
-                  </div>
-                </article>
-                <article class="guide-card guide-card-text">
-                  <div>
-                    <time>04</time>
-                    <h4>Качество</h4>
-                    <p>Чем точнее рецепт, тем лучше получится напиток.</p>
+                    <h4>Выдержка в бочке</h4>
+                    <p>Выдержка делает напиток ближе к нужному рецепту и часто влияет на качество.</p>
+
+                    <div class="brewery-process-columns">
+                      <div>
+                        <h5>Общий принцип</h5>
+                        <ol>
+                          <li>Постройте подходящую бочку.</li>
+                          <li>Положите напиток внутрь.</li>
+                          <li>Подождите нужное время.</li>
+                          <li>Заберите готовый результат.</li>
+                        </ol>
+                      </div>
+                      <div>
+                        <h5>Размеры бочек</h5>
+                        <ul>
+                          <li>Маленькая бочка.</li>
+                          <li>Средняя бочка.</li>
+                          <li>Большая бочка.</li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <p class="brewery-guide-note">
+                      Тип дерева в бочке важен, если он указан в рецепте.
+                    </p>
                   </div>
                 </article>
               </div>
+
+              <article class="brewery-important-panel">
+                <h4>Важные моменты</h4>
+                <ul>
+                  <li>Храните готовые напитки в сундуках, чтобы не потерять результат.</li>
+                  <li>Бочки можно ставить рядом, но лучше не встраивать их вплотную в деревянные стены.</li>
+                  <li>Если рецепт требует выдержку или дистилляцию, пропуск этапа почти всегда ухудшит качество.</li>
+                  <li>Время варки, дерево бочки и количество прогонов смотрите прямо в рецепте ниже.</li>
+                </ul>
+              </article>
             </section>
 
             <section class="guide-category" id="recipes">

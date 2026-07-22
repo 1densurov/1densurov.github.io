@@ -1775,18 +1775,257 @@ h3 {
 }
 
 /* Brewery guide */
-.brewery-page .brewery-hero {
-  background:
-    linear-gradient(180deg, rgba(7, 11, 15, 0.72), rgba(7, 11, 15, 0.96)),
-    url("assets/breweryx.webp") center / cover;
+.brewery-howto {
+  gap: 18px;
 }
 
-.brewery-guide-grid {
+.brewery-guide-intro-panel,
+.brewery-important-panel,
+.brewery-process-card {
+  border: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 14% 0%, rgba(214, 145, 57, 0.13), transparent 34%),
+    linear-gradient(180deg, rgba(18, 25, 31, 0.9), rgba(10, 15, 20, 0.94));
+  box-shadow: var(--shadow);
+}
+
+.brewery-guide-intro-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 24px;
+  align-items: center;
+  padding: 24px;
+}
+
+.brewery-kicker {
+  margin: 0 0 8px;
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.brewery-guide-intro-panel h4,
+.brewery-important-panel h4 {
+  margin: 0 0 10px;
+  color: var(--text);
+  font-size: 26px;
+  line-height: 1.08;
+}
+
+.brewery-guide-intro-panel p {
+  max-width: 720px;
+  margin: 0;
+  color: var(--muted);
+}
+
+.brewery-stage-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.brewery-stage-strip li {
+  min-width: 112px;
+  padding: 12px 14px;
+  border: 1px solid rgba(214, 145, 57, 0.26);
+  background: rgba(214, 145, 57, 0.08);
+  color: var(--text);
+  font-weight: 900;
+}
+
+.brewery-stage-strip span {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+}
+
+.brewery-process-list {
+  display: grid;
+  gap: 18px;
+}
+
+.brewery-process-card {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.82fr) minmax(0, 1.18fr);
+  align-items: stretch;
+  overflow: hidden;
+}
+
+.brewery-process-card figure {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+  background: rgba(7, 11, 15, 0.5);
+}
+
+.brewery-process-card figure::before,
+.brewery-process-card figure::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.brewery-process-card figure::before {
+  z-index: -2;
+  background-image:
+    linear-gradient(180deg, rgba(7, 11, 15, 0.08), rgba(7, 11, 15, 0.44)),
+    var(--guide-image);
+  background-size: cover;
+  background-position: center;
+  filter: blur(16px) saturate(1.18);
+  transform: scale(1.12);
+  opacity: 0.72;
+}
+
+.brewery-process-card figure::after {
+  z-index: -1;
+  background:
+    radial-gradient(circle at 50% 42%, transparent 0 34%, rgba(7, 11, 15, 0.42) 78%),
+    linear-gradient(90deg, transparent 58%, rgba(10, 15, 20, 0.52));
+}
+
+.brewery-process-card img {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 430px);
+  aspect-ratio: 1 / 1;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+}
+
+.brewery-process-content {
+  display: grid;
+  align-content: start;
+  gap: 14px;
+  padding: 24px;
+}
+
+.brewery-process-content time {
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 950;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.brewery-process-content h4 {
+  margin: 0;
+  color: var(--text);
+  font-size: 28px;
+  line-height: 1.08;
+}
+
+.brewery-process-content p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.brewery-process-columns {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+  gap: 14px;
 }
 
+.brewery-process-columns > div {
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.brewery-process-columns h5 {
+  margin: 0 0 10px;
+  color: var(--cyan);
+  font-size: 12px;
+  font-weight: 950;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.brewery-process-columns ul,
+.brewery-process-columns ol,
+.brewery-important-panel ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.brewery-process-columns li + li,
+.brewery-important-panel li + li {
+  margin-top: 7px;
+}
+
+.brewery-guide-note {
+  padding: 12px 14px;
+  border-left: 3px solid var(--gold);
+  background: rgba(214, 145, 57, 0.08);
+}
+
+.brewery-guide-note.is-danger {
+  border-left-color: #c96a4a;
+  background: rgba(201, 106, 74, 0.09);
+}
+
+.brewery-important-panel {
+  padding: 22px;
+}
+
+.brewery-important-panel h4 {
+  font-size: 24px;
+}
+
+@media (max-width: 980px) {
+  .brewery-guide-intro-panel,
+  .brewery-process-card {
+    grid-template-columns: 1fr;
+  }
+
+  .brewery-stage-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .brewery-process-card figure {
+    min-height: 340px;
+    aspect-ratio: 1 / 1;
+  }
+
+  .brewery-process-card figure::after {
+    background: linear-gradient(180deg, transparent 55%, rgba(10, 15, 20, 0.46));
+  }
+}
+
+@media (max-width: 620px) {
+  .brewery-guide-intro-panel,
+  .brewery-process-content,
+  .brewery-important-panel {
+    padding: 18px;
+  }
+
+  .brewery-process-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .brewery-process-content h4,
+  .brewery-guide-intro-panel h4 {
+    font-size: 24px;
+  }
+}
+
+/* Restored Brewery recipe styles */
 .brewery-stats-row {
   display: flex;
   flex-wrap: wrap;
@@ -2090,4 +2329,55 @@ h3 {
   color: var(--faint);
   font-size: 12px;
   margin-top: 6px;
+}
+
+/* Wider desktop guide pages */
+@media (min-width: 1180px) {
+  .guides-page .guides-section > .container {
+    width: min(1520px, calc(100% - 56px));
+  }
+
+  .guides-page .guides-layout {
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: clamp(24px, 2.6vw, 40px);
+  }
+
+  .brewery-page .brewery-process-card {
+    grid-template-columns: minmax(360px, 0.72fr) minmax(0, 1.28fr);
+  }
+
+  .brewery-page .brewery-process-card img {
+    width: min(100%, 460px);
+  }
+
+  .brewery-page .brewery-process-columns {
+    grid-template-columns: minmax(220px, 0.9fr) minmax(280px, 1.1fr);
+  }
+
+  .brewery-page .brewery-recipe-grid {
+    grid-template-columns: repeat(2, minmax(430px, 1fr));
+  }
+}
+
+@media (min-width: 1620px) {
+  .guides-page .guides-section > .container {
+    width: min(1640px, calc(100% - 72px));
+  }
+
+  .brewery-page .brewery-recipe-grid {
+    grid-template-columns: repeat(2, minmax(520px, 1fr));
+  }
+}
+
+/* Brewery recipes: three columns on wide desktop */
+@media (min-width: 1320px) {
+  .brewery-page .brewery-recipe-grid {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+}
+
+@media (min-width: 1620px) {
+  .brewery-page .brewery-recipe-grid {
+    grid-template-columns: repeat(3, minmax(360px, 1fr));
+  }
 }
