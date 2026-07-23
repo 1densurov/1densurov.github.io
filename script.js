@@ -1,4 +1,4 @@
-﻿
+
 const siteLoader = document.querySelector('[data-site-loader]');
 const hideSiteLoader = () => {
   if (!siteLoader) return;
@@ -19,6 +19,51 @@ const setNavState = () => {
 
 window.addEventListener('scroll', setNavState, { passive: true });
 setNavState();
+
+// Mobile Nav Drawer & Dropdown Logic
+const navToggle = document.querySelector('[data-nav-toggle]');
+const mobileDrawer = document.querySelector('[data-mobile-drawer]');
+const mobileDropdownToggle = document.querySelector('[data-mobile-dropdown-toggle]');
+const mobileSubmenu = document.querySelector('[data-mobile-submenu]');
+
+if (navToggle && mobileDrawer) {
+  const toggleMobileNav = (show) => {
+    const isOpen = show !== undefined ? show : !mobileDrawer.classList.contains('is-open');
+    mobileDrawer.classList.toggle('is-open', isOpen);
+    navToggle.classList.toggle('is-active', isOpen);
+    navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  };
+
+  navToggle.addEventListener('click', () => toggleMobileNav());
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileDrawer.classList.contains('is-open')) {
+      toggleMobileNav(false);
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 980 && mobileDrawer.classList.contains('is-open')) {
+      toggleMobileNav(false);
+    }
+  });
+
+  mobileDrawer.querySelectorAll('a:not([data-mobile-dropdown-toggle])').forEach((link) => {
+    link.addEventListener('click', () => toggleMobileNav(false));
+  });
+}
+
+if (mobileDropdownToggle && mobileSubmenu) {
+  mobileDropdownToggle.addEventListener('click', (e) => {
+    e.preventDefault();
+    const isOpen = mobileSubmenu.classList.contains('is-open');
+    mobileSubmenu.classList.toggle('is-open', !isOpen);
+    mobileDropdownToggle.classList.toggle('is-active', !isOpen);
+    const chevron = mobileDropdownToggle.querySelector('.dropdown-chevron');
+    if (chevron) chevron.style.transform = !isOpen ? 'rotate(180deg)' : '';
+  });
+}
 
 document.querySelectorAll('[data-copy]').forEach((button) => {
   button.addEventListener('click', async () => {

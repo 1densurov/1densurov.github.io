@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="ru">
 <head>
   <meta charset="utf-8">
@@ -19,15 +19,113 @@
         </a>
         <nav class="main-nav" aria-label="Главная навигация">
           <a href="index.html">Главная</a>
-          <a href="guides.html">Гайды</a>
+          
+          <div class="nav-dropdown" data-dropdown>
+            <a href="guides.html" class="nav-dropdown-toggle">
+              <span>Гайды</span>
+              <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+            </a>
+            <div class="nav-dropdown-menu">
+              <a href="brewery.html" class="dropdown-item">
+                <span class="dropdown-icon">🍺</span>
+                <div>
+                  <strong>Brewery (Рецепты)</strong>
+                  <small>Полная варка напитков и рецепты</small>
+                </div>
+              </a>
+              <a href="guides.html#economy" class="dropdown-item">
+                <span class="dropdown-icon">💎</span>
+                <div>
+                  <strong>Валюта (Души)</strong>
+                  <small>Осколки, фрагменты и великие души</small>
+                </div>
+              </a>
+              <a href="guides.html#territory" class="dropdown-item">
+                <span class="dropdown-icon">🛡️</span>
+                <div>
+                  <strong>Приваты (Тотемы)</strong>
+                  <small>Защита вашей земли и ключи</small>
+                </div>
+              </a>
+              <a href="guides.html#roleplay" class="dropdown-item">
+                <span class="dropdown-icon">🎭</span>
+                <div>
+                  <strong>RolePlay команды</strong>
+                  <small>/me, /do, /try и отыгрыш</small>
+                </div>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a href="guides.html" class="dropdown-item dropdown-item-all">
+                <span>Все гайды →</span>
+              </a>
+            </div>
+          </div>
+
           <a href="world.html">Мир</a>
           <a href="rules.html" aria-current="page">Правила</a>
         </nav>
         <div class="header-actions">
           <a class="discord-link" href="https://discord.gg/bby9jnJpbg" target="_blank" rel="noreferrer">Discord</a>
+          <button class="nav-toggle" data-nav-toggle aria-label="Открыть меню" aria-expanded="false">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+          </button>
         </div>
       </div>
+
+      <!-- Mobile Drawer Navigation -->
+      <div class="mobile-nav-drawer" data-mobile-drawer>
+        <a href="index.html" class="mobile-nav-link"><span>Главная</span></a>
+        
+        <a href="#" class="mobile-nav-link" data-mobile-dropdown-toggle>
+          <span>Гайды</span>
+          <svg class="dropdown-chevron" width="14" height="14" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+        </a>
+        <div class="mobile-submenu" data-mobile-submenu>
+          <a href="brewery.html" class="mobile-sublink">
+            <span>🍺</span>
+            <div>
+              <strong>Brewery (Рецепты)</strong>
+              <small>Рецепты напитков, котлы и варка</small>
+            </div>
+          </a>
+          <a href="guides.html#economy" class="mobile-sublink">
+            <span>💎</span>
+            <div>
+              <strong>Валюта (Души)</strong>
+              <small>Осколки, фрагменты и обмен</small>
+            </div>
+          </a>
+          <a href="guides.html#territory" class="mobile-sublink">
+            <span>🛡️</span>
+            <div>
+              <strong>Приваты (Тотемы)</strong>
+              <small>Защита земли и ключи</small>
+            </div>
+          </a>
+          <a href="guides.html#roleplay" class="mobile-sublink">
+            <span>🎭</span>
+            <div>
+              <strong>RolePlay команды</strong>
+              <small>/me, /do, /try</small>
+            </div>
+          </a>
+          <a href="guides.html" class="mobile-sublink">
+            <span>📖</span>
+            <div>
+              <strong>Все гайды</strong>
+              <small>Полный список разделов</small>
+            </div>
+          </a>
+        </div>
+
+        <a href="world.html" class="mobile-nav-link"><span>Карта Мира</span></a>
+        <a href="rules.html" class="mobile-nav-link is-active"><span>Правила сервера</span></a>
+        <a href="https://discord.gg/bby9jnJpbg" target="_blank" rel="noreferrer" class="mobile-nav-link" style="color: var(--cyan); border-color: rgba(173, 243, 253, 0.4);"><span>Вступить в Discord ↗</span></a>
+      </div>
     </header>
+
 
     <main class="rules-page">
       <section class="rules-hero">

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
@@ -25,26 +25,131 @@
         </a>
         <nav class="main-nav" aria-label="Главная навигация">
           <a href="index.html" aria-current="page">Главная</a>
-          <a href="guides.html">Гайды</a>
+          
+          <div class="nav-dropdown" data-dropdown>
+            <a href="guides.html" class="nav-dropdown-toggle">
+              <span>Гайды</span>
+              <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+            </a>
+            <div class="nav-dropdown-menu">
+              <a href="brewery.html" class="dropdown-item">
+                <span class="dropdown-icon">🍺</span>
+                <div>
+                  <strong>Brewery (Рецепты)</strong>
+                  <small>Полная варка напитков и рецепты</small>
+                </div>
+              </a>
+              <a href="guides.html#economy" class="dropdown-item">
+                <span class="dropdown-icon">💎</span>
+                <div>
+                  <strong>Валюта (Души)</strong>
+                  <small>Осколки, фрагменты и великие души</small>
+                </div>
+              </a>
+              <a href="guides.html#territory" class="dropdown-item">
+                <span class="dropdown-icon">🛡️</span>
+                <div>
+                  <strong>Приваты (Тотемы)</strong>
+                  <small>Защита вашей земли и ключи</small>
+                </div>
+              </a>
+              <a href="guides.html#roleplay" class="dropdown-item">
+                <span class="dropdown-icon">🎭</span>
+                <div>
+                  <strong>RolePlay команды</strong>
+                  <small>/me, /do, /try и отыгрыш</small>
+                </div>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a href="guides.html" class="dropdown-item dropdown-item-all">
+                <span>Все гайды →</span>
+              </a>
+            </div>
+          </div>
+
           <a href="world.html">Мир</a>
           <a href="rules.html">Правила</a>
         </nav>
         <div class="header-actions">
           <a class="discord-link" href="https://discord.gg/bby9jnJpbg" target="_blank" rel="noreferrer">Discord</a>
+          <button class="nav-toggle" data-nav-toggle aria-label="Открыть меню" aria-expanded="false">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+          </button>
         </div>
       </div>
+
+      <!-- Mobile Drawer Navigation -->
+      <div class="mobile-nav-drawer" data-mobile-drawer>
+        <a href="index.html" class="mobile-nav-link is-active"><span>Главная</span></a>
+        
+        <a href="#" class="mobile-nav-link" data-mobile-dropdown-toggle>
+          <span>Гайды</span>
+          <svg class="dropdown-chevron" width="14" height="14" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+        </a>
+        <div class="mobile-submenu" data-mobile-submenu>
+          <a href="brewery.html" class="mobile-sublink">
+            <span>🍺</span>
+            <div>
+              <strong>Brewery (Рецепты)</strong>
+              <small>Рецепты напитков, котлы и варка</small>
+            </div>
+          </a>
+          <a href="guides.html#economy" class="mobile-sublink">
+            <span>💎</span>
+            <div>
+              <strong>Валюта (Души)</strong>
+              <small>Осколки, фрагменты и обмен</small>
+            </div>
+          </a>
+          <a href="guides.html#territory" class="mobile-sublink">
+            <span>🛡️</span>
+            <div>
+              <strong>Приваты (Тотемы)</strong>
+              <small>Защита земли и ключи</small>
+            </div>
+          </a>
+          <a href="guides.html#roleplay" class="mobile-sublink">
+            <span>🎭</span>
+            <div>
+              <strong>RolePlay команды</strong>
+              <small>/me, /do, /try</small>
+            </div>
+          </a>
+          <a href="guides.html" class="mobile-sublink">
+            <span>📖</span>
+            <div>
+              <strong>Все гайды</strong>
+              <small>Полный список разделов</small>
+            </div>
+          </a>
+        </div>
+
+        <a href="world.html" class="mobile-nav-link"><span>Карта Мира</span></a>
+        <a href="rules.html" class="mobile-nav-link"><span>Правила сервера</span></a>
+        <a href="https://discord.gg/bby9jnJpbg" target="_blank" rel="noreferrer" class="mobile-nav-link" style="color: var(--cyan); border-color: rgba(173, 243, 253, 0.4);"><span>Вступить в Discord ↗</span></a>
+      </div>
     </header>
+
     <main>
       <section class="hero-section">
         <div class="hero-bg" aria-hidden="true">
-          <img src="assets/hero-world.webp" alt="">
+          <!-- Видео-фон Hero с автовоспроизведением. Замените assets/hero-bg.mp4 на ваш ролик! -->
+          <video class="hero-video-bg" autoplay loop muted playsinline poster="assets/hero-world.webp">
+            <source src="assets/hero-bg.mp4" type="video/mp4">
+            <source src="assets/hero-bg.webm" type="video/webm">
+          </video>
+          <img src="assets/hero-world.webp" alt="" class="hero-fallback-img">
         </div>
         <div class="container hero-layout">
           <div class="hero-copy">
+            <a class="hero-brewery-badge" href="brewery.html">🍺 Справочник Brewery & Напитков ↗</a>
             <h1>MineReam Mediavel</h1>
             <p>Средневековый RP сервер Minecraft с кастомным миром, персонажами и выживанием.</p>
             <div class="hero-actions">
-              <a class="hero-action hero-action-primary" href="#start-playing">Начать играть</a>
+              <a class="button primary" href="#start-playing">Начать играть</a>
+              <a class="button secondary" href="brewery.html">Рецепты Brewery 🍺</a>
             </div>
           </div>
           <article class="server-card" id="server">
@@ -70,6 +175,43 @@
         </div>
       </section>
 
+      <!-- Раздел Новости & Сообщество Discord -->
+      <section class="section events-section" id="community">
+        <div class="container section-head centered">
+          <h2>Новости & Сообщество</h2>
+        </div>
+        <div class="container events-grid">
+          <article class="event-card">
+            <span class="event-tag gold">📢 Discord Новости</span>
+            <h3>Все анонсы и новости в одном месте</h3>
+            <p>Мы публиуем все свежие обновления, планируемые ивенты, технические патчи и голосования в нашем Discord-сервере.</p>
+            <div class="event-meta">
+              <a href="https://discord.gg/bby9jnJpbg" target="_blank" rel="noreferrer" style="color: var(--gold); font-weight: 900;">Перейти в Discord ↗</a>
+              <span>Канал #новости</span>
+            </div>
+          </article>
+          <article class="event-card">
+            <span class="event-tag">🍺 Ремесло & Варение</span>
+            <h3>Справочник BreweryX</h3>
+            <p>Варите уникальные напитки, открывайте рецепты выдержанных отваров и продавайте их в тавернах другим игрокам.</p>
+            <div class="event-meta">
+              <a href="brewery.html" style="color: var(--cyan); font-weight: 800;">Рецепты Brewery →</a>
+              <span>100+ напитков</span>
+            </div>
+          </article>
+          <article class="event-card">
+            <span class="event-tag">🏰 Развитие мира</span>
+            <h3>Займите лучшие земли</h3>
+            <p>Сервер развивается — у вас есть шанс основательно закрепиться на карте, поставить Тотем привата и собрать первую общину.</p>
+            <div class="event-meta">
+              <a href="world.html" style="color: var(--cyan); font-weight: 800;">Карта биомов →</a>
+              <span>Кастомный мир</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+
       <section class="section quick-section">
         <div class="container quick-showcase">
           <button class="quick-showcase-image media-preview" type="button" data-lightbox-src="assets/mineream-short.webp" data-lightbox-title="MineReam Mediavel">
@@ -81,28 +223,28 @@
               <article>
                 <span>RP</span>
                 <div>
-                  <h3>Средневековье</h3>
-                  <p>Играй персонажем, а не просто ником в табе.</p>
+                  <h3><a href="guides.html#roleplay" style="color:inherit;">Средневековье</a></h3>
+                  <p>Играй персонажем с личной историей, а не просто ником в табе.</p>
                 </div>
               </article>
               <article>
                 <span>Мир</span>
                 <div>
-                  <h3>Кастомная генерация</h3>
-                  <p>Острова, биомы и места для поселений.</p>
+                  <h3><a href="world.html" style="color:inherit;">Кастомная генерация</a></h3>
+                  <p>Уникальные острова, биомы и живописные места для городов.</p>
                 </div>
               </article>
               <article>
                 <span>Души</span>
                 <div>
-                  <h3>Своя валюта</h3>
-                  <p>Осколки, фрагменты и великие души.</p>
+                  <h3><a href="guides.html#economy" style="color:inherit;">Своя валюта</a></h3>
+                  <p>Осколки, фрагменты и великие души для торговли.</p>
                 </div>
               </article>
               <article>
                 <span>Вход</span>
                 <div>
-                  <h3>Через Discord</h3>
+                  <h3><a href="#start-playing" style="color:inherit;">Через Discord</a></h3>
                   <p>Доступ, связь и объявления в одном месте.</p>
                 </div>
               </article>
@@ -110,6 +252,40 @@
           </div>
         </div>
       </section>
+
+      <!-- Раздел Галерея / Атмосфера сообщества -->
+      <section class="section atmosphere-section" id="atmosphere">
+        <div class="container section-head centered">
+          <h2>Атмосфера MineReam</h2>
+        </div>
+        <div class="container atmosphere-grid">
+          <article class="atmosphere-card media-preview" data-lightbox-src="assets/spawn-bridge.webp" data-lightbox-title="Спавн и мост замка">
+            <img src="assets/spawn-bridge.webp" alt="Спавн сервера">
+            <div class="atmosphere-overlay">
+              <span class="atmosphere-title">Спавн & Главный мост</span>
+            </div>
+          </article>
+          <article class="atmosphere-card media-preview" data-lightbox-src="assets/keeper-hall.webp" data-lightbox-title="Зал Хранителя и Ратуша">
+            <img src="assets/keeper-hall.webp" alt="Зал Хранителя">
+            <div class="atmosphere-overlay">
+              <span class="atmosphere-title">Зал Хранителя & Торговля</span>
+            </div>
+          </article>
+          <article class="atmosphere-card media-preview" data-lightbox-src="assets/brewery-boiling.webp" data-lightbox-title="Процесс варки в Brewery">
+            <img src="assets/brewery-boiling.webp" alt="Варка в котле Brewery">
+            <div class="atmosphere-overlay">
+              <span class="atmosphere-title">Варка напитков Brewery</span>
+            </div>
+          </article>
+          <article class="atmosphere-card media-preview" data-lightbox-src="assets/pink-grove.webp" data-lightbox-title="Кастомный биом - Розовая Роща">
+            <img src="assets/pink-grove.webp" alt="Розовая Роща">
+            <div class="atmosphere-overlay">
+              <span class="atmosphere-title">Розовая Роща</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
 
       <section class="section start-playing-section" id="start-playing">
         <div class="container section-head centered">
