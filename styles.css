@@ -78,12 +78,21 @@ button { font: inherit; }
 }
 .main-nav > a:hover,
 .nav-dropdown-toggle:hover,
+.nav-dropdown:hover .nav-dropdown-toggle,
 .nav-dropdown:focus-within .nav-dropdown-toggle {
   color: var(--cyan);
   background: rgba(173, 243, 253, 0.08);
 }
 .nav-dropdown {
   position: relative;
+}
+.nav-dropdown::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: min(330px, calc(100vw - 36px));
+  height: 12px;
 }
 .nav-dropdown-toggle {
   display: inline-flex;
@@ -104,6 +113,7 @@ button { font: inherit; }
 }
 .nav-dropdown-menu {
   position: absolute;
+  z-index: 70;
   top: calc(100% + 8px);
   left: 0;
   width: min(330px, calc(100vw - 36px));
