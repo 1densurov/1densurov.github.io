@@ -18,110 +18,41 @@
         </a>
         <nav class="main-nav" aria-label="Главная навигация">
           <a href="index.html">Главная</a>
-          
-          <div class="nav-dropdown" data-dropdown>
-            <a href="guides.html" class="nav-dropdown-toggle" aria-current="page">
+          <div class="nav-dropdown">
+            <a class="nav-dropdown-toggle" href="guides.html" aria-current="page">
               <span>Гайды</span>
-              <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+              <span class="nav-dropdown-caret" aria-hidden="true"></span>
             </a>
-            <div class="nav-dropdown-menu">
-              <a href="brewery.html" class="dropdown-item">
-                <span class="dropdown-icon">🍺</span>
-                <div>
-                  <strong>Brewery (Рецепты)</strong>
-                  <small>Полная варка напитков и рецепты</small>
-                </div>
+            <div class="nav-dropdown-menu" aria-label="Разделы гайдов">
+              <a class="nav-dropdown-item" href="brewery.html">
+                <span class="nav-guide-mark nav-guide-brewery" aria-hidden="true"></span>
+                <span><strong>Brewery</strong><small>Напитки, варка и рецепты</small></span>
               </a>
-              <a href="guides.html#economy" class="dropdown-item">
-                <span class="dropdown-icon">💎</span>
-                <div>
-                  <strong>Валюта (Души)</strong>
-                  <small>Осколки, фрагменты и великие души</small>
-                </div>
+              <a class="nav-dropdown-item" href="guides.html#economy">
+                <span class="nav-guide-mark nav-guide-souls" aria-hidden="true"></span>
+                <span><strong>Валюта</strong><small>Осколки, фрагменты и великие души</small></span>
               </a>
-              <a href="guides.html#territory" class="dropdown-item">
-                <span class="dropdown-icon">🛡️</span>
-                <div>
-                  <strong>Приваты (Тотемы)</strong>
-                  <small>Защита вашей земли и ключи</small>
-                </div>
+              <a class="nav-dropdown-item" href="guides.html#territory">
+                <span class="nav-guide-mark nav-guide-totems" aria-hidden="true"></span>
+                <span><strong>Приваты</strong><small>Тотемы, земля и ключи</small></span>
               </a>
-              <a href="guides.html#roleplay" class="dropdown-item">
-                <span class="dropdown-icon">🎭</span>
-                <div>
-                  <strong>RolePlay команды</strong>
-                  <small>/me, /do, /try и отыгрыш</small>
-                </div>
+              <a class="nav-dropdown-item" href="guides.html#roleplay">
+                <span class="nav-guide-mark nav-guide-rp" aria-hidden="true"></span>
+                <span><strong>RolePlay</strong><small>/me, /do, /try и отыгрыш</small></span>
               </a>
-              <div class="dropdown-divider"></div>
-              <a href="guides.html" class="dropdown-item dropdown-item-all">
-                <span>Все гайды →</span>
+              <a class="nav-dropdown-item" href="guides.html#systems">
+                <span class="nav-guide-mark nav-guide-systems" aria-hidden="true"></span>
+                <span><strong>Механики</strong><small>Системы сервера и полезные мелочи</small></span>
               </a>
+              <a class="nav-dropdown-all" href="guides.html">Все гайды <span aria-hidden="true">→</span></a>
             </div>
           </div>
-
           <a href="world.html">Мир</a>
           <a href="rules.html">Правила</a>
         </nav>
         <div class="header-actions">
           <a class="discord-link" href="https://discord.gg/bby9jnJpbg" target="_blank" rel="noreferrer">Discord</a>
-          <button class="nav-toggle" data-nav-toggle aria-label="Открыть меню" aria-expanded="false">
-            <span class="hamburger-bar"></span>
-            <span class="hamburger-bar"></span>
-            <span class="hamburger-bar"></span>
-          </button>
         </div>
-      </div>
-
-      <!-- Mobile Drawer Navigation -->
-      <div class="mobile-nav-drawer" data-mobile-drawer>
-        <a href="index.html" class="mobile-nav-link"><span>Главная</span></a>
-        
-        <a href="#" class="mobile-nav-link is-active" data-mobile-dropdown-toggle>
-          <span>Гайды</span>
-          <svg class="dropdown-chevron" width="14" height="14" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none"/></svg>
-        </a>
-        <div class="mobile-submenu is-open" data-mobile-submenu>
-          <a href="brewery.html" class="mobile-sublink">
-            <span>🍺</span>
-            <div>
-              <strong>Brewery (Рецепты)</strong>
-              <small>Рецепты напитков, котлы и варка</small>
-            </div>
-          </a>
-          <a href="guides.html#economy" class="mobile-sublink">
-            <span>💎</span>
-            <div>
-              <strong>Валюта (Души)</strong>
-              <small>Осколки, фрагменты и обмен</small>
-            </div>
-          </a>
-          <a href="guides.html#territory" class="mobile-sublink">
-            <span>🛡️</span>
-            <div>
-              <strong>Приваты (Тотемы)</strong>
-              <small>Защита земли и ключи</small>
-            </div>
-          </a>
-          <a href="guides.html#roleplay" class="mobile-sublink">
-            <span>🎭</span>
-            <div>
-              <strong>RolePlay команды</strong>
-              <small>/me, /do, /try</small>
-            </div>
-          </a>
-          <a href="guides.html" class="mobile-sublink">
-            <span>📖</span>
-            <div>
-              <strong>Все гайды</strong>
-              <small>Полный список разделов</small>
-            </div>
-          </a>
-        </div>
-
-        <a href="world.html" class="mobile-nav-link"><span>Карта Мира</span></a>
-        <a href="rules.html" class="mobile-nav-link"><span>Правила сервера</span></a>
-        <a href="https://discord.gg/bby9jnJpbg" target="_blank" rel="noreferrer" class="mobile-nav-link" style="color: var(--cyan); border-color: rgba(173, 243, 253, 0.4);"><span>Вступить в Discord ↗</span></a>
       </div>
     </header>
 
@@ -129,7 +60,6 @@
       <section class="rules-hero guides-hero">
         <div class="container rules-hero-inner">
           <h1>Гайды MineReam</h1>
-          <p style="color: var(--muted); margin-top: 8px;">Всё о выживании, экономике, приватах и варке напитков на сервере.</p>
         </div>
       </section>
 
@@ -138,7 +68,6 @@
           <aside class="guides-sidebar" aria-label="Категории гайдов">
             <h2>Категории</h2>
             <nav>
-              <a href="brewery.html" style="color: var(--gold); font-weight: 900; background: rgba(217, 163, 61, 0.12); border: 1px solid rgba(217, 163, 61, 0.3);">🍺 Brewery (Напитки) ↗</a>
               <a href="#start">Начало</a>
               <a href="#economy">Валюта</a>
               <a href="#territory">Приваты</a>
@@ -147,7 +76,6 @@
               <a href="rules.html">Правила</a>
             </nav>
           </aside>
-
 
           <div class="guides-content">
 
@@ -274,7 +202,7 @@
               <h3>Механики</h3>
               <div class="guide-card-grid">
                 <article class="guide-card">
-                  <img src="assets/simple-voice.webp" alt="Simple Voice Chat">
+                  <img src="assets/guide-voice-chat.webp" alt="Simple Voice Chat">
                   <div>
                     <time>Общение</time>
                     <h4>Войс чат</h4>
@@ -282,7 +210,7 @@
                   </div>
                 </article>
                 <article class="guide-card">
-                  <img src="assets/emotecraft.webp" alt="Emotecraft">
+                  <img src="assets/guide-emotes.webp" alt="Emotecraft">
                   <div>
                     <time>Отыгрыш</time>
                     <h4>Эмоции</h4>
@@ -290,7 +218,7 @@
                   </div>
                 </article>
                 <article class="guide-card">
-                  <img src="assets/breweryx.webp" alt="BreweryX">
+                  <img src="assets/guide-brewery.webp" alt="BreweryX">
                   <div>
                     <time>Ремесло</time>
                     <h4>Напитки</h4>
@@ -299,7 +227,7 @@
                   </div>
                 </article>
                 <article class="guide-card">
-                  <img src="assets/world-map.webp" alt="Карта мира MineReam">
+                  <img src="assets/guide-map.webp" alt="Карта мира MineReam">
                   <div>
                     <time>Мир</time>
                     <h4>Карта</h4>
