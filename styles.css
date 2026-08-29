@@ -2553,6 +2553,73 @@ h3 {
   font-size: 12px;
 }
 
+.brewery-ingredient-note {
+  max-width: 860px;
+  margin: 0 0 16px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.brewery-variants {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 10px 0;
+}
+
+.brewery-variants summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--cyan);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.brewery-variants summary span {
+  min-width: 24px;
+  color: var(--gold);
+  text-align: right;
+}
+
+.brewery-variant-list {
+  margin-top: 8px;
+}
+
+.brewery-variant-row {
+  display: grid;
+  gap: 4px;
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+}
+
+.brewery-variant-row strong {
+  color: var(--text);
+}
+
+.brewery-variant-row p,
+.brewery-variant-row small {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.brewery-variant-row small {
+  display: block;
+  color: var(--faint);
+}
+
+.brewery-variant-row small + small {
+  margin-top: 3px;
+}
+
+.brewery-variant-row .brewery-variant-effects {
+  margin-top: 3px;
+  color: var(--faint);
+}
+
 @media (max-width: 980px) {
   .brewery-guide-grid,
   .brewery-recipe-grid,
