@@ -47,11 +47,20 @@
               <a class="nav-dropdown-all" href="guides.html">Все гайды <span aria-hidden="true">→</span></a>
             </div>
           </div>
+          <a href="races.html">Расы</a>
           <a href="world.html">Мир</a>
           <a href="rules.html">Правила</a>
         </nav>
         <div class="header-actions">
+          <button class="header-play" type="button" data-copy="play.mineream.ru" aria-label="Скопировать IP play.mineream.ru">
+            <span class="header-play-dot" data-online-dot aria-hidden="true"></span>
+            <span>Играть</span>
+            <small data-online-count></small>
+          </button>
           <a class="discord-link" href="https://discord.gg/bby9jnJpbg" target="_blank" rel="noreferrer">Discord</a>
+          <button class="nav-burger" type="button" data-nav-toggle aria-label="Открыть меню" aria-expanded="false">
+            <span></span>
+          </button>
         </div>
       </div>
     </header>
@@ -91,7 +100,7 @@
                       <li><a href="https://discord.gg/bby9jnJpbg" target="_blank" rel="noreferrer">Зайди в Discord</a></li>
                       <li><button type="button" data-copy="play.mineream.ru">Скопируй IP</button></li>
                       <li>Отправь боту код с сервера</li>
-                      <li>Пройди интро и выбери имя</li>
+                      <li>Пройди интро, выбери <a href="races.html">расу</a> и имя</li>
                     </ol>
                   </div>
                 </article>
@@ -235,21 +244,88 @@
                     <a class="guide-open-link" href="world.html">Открыть карту</a>
                   </div>
                 </article>
+                <article class="guide-card">
+                  <img src="assets/hero-world.webp" alt="Костры">
+                  <div>
+                    <time>Путь</time>
+                    <h4>Костры</h4>
+                    <p>Зажигай костры в разных уголках мира и перемещайся между ними через пламя.</p>
+                  </div>
+                </article>
+                <article class="guide-card">
+                  <img src="assets/inn.webp" alt="Ранения">
+                  <div>
+                    <time>Выживание</time>
+                    <h4>Ранения</h4>
+                    <p>Смертельный удар не убивает сразу — раненого товарища можно поднять.</p>
+                  </div>
+                </article>
+                <article class="guide-card">
+                  <img src="assets/swamp-woods.webp" alt="Рубка деревьев">
+                  <div>
+                    <time>Ремесло</time>
+                    <h4>Рубка деревьев</h4>
+                    <p>Shift + топор по бревну — и дерево падает целиком.</p>
+                  </div>
+                </article>
+                <article class="guide-card">
+                  <img src="assets/market-stall.webp" alt="Лавки жителей">
+                  <div>
+                    <time>Торговля</time>
+                    <h4>Лавки</h4>
+                    <p>Торговцы в поселениях продают и покупают товары за души.</p>
+                  </div>
+                </article>
+                <article class="guide-card">
+                  <img src="assets/winter-lake.webp" alt="Времена года">
+                  <div>
+                    <time>Мир</time>
+                    <h4>Времена года</h4>
+                    <p>Весна, лето, осень и зима сменяют друг друга.</p>
+                  </div>
+                </article>
+                <article class="guide-card">
+                  <img src="assets/fields-wide.webp" alt="Обзор сервера">
+                  <div>
+                    <time>Новичкам</time>
+                    <h4>Обзор</h4>
+                    <p>Команда <code>/obzor</code> покажет главные места спавна.</p>
+                  </div>
+                </article>
               </div>
             </section>
           </div>
         </div>
       </section>
 
-      <footer class="site-footer">
-        <div class="container footer-inner">
-          <span>© 2026 MineReam.</span>
-          <span>Не является официальным продуктом Mojang.</span>
+      <div class="container page-vote">Голосовать:
+        <a href="https://hotmc.ru/vote-235838" target="_blank" rel="noreferrer">HotMC</a> ·
+        <a href="https://minecraftrating.ru/vote/272748/" target="_blank" rel="noreferrer">MinecraftRating</a> ·
+        <a href="https://top-minecrafter.com/server/mineream-mediavel/" target="_blank" rel="noreferrer">Top-Minecrafter</a>
+      </div>
+      <footer class="site-footer site-footer-compact">
+        <div class="container footer-compact-top">
+          <nav class="footer-links" aria-label="Разделы сайта">
+            <a href="index.html">Главная</a>
+            <a href="guides.html" aria-current="page">Гайды</a>
+            <a href="races.html">Расы</a>
+            <a href="world.html">Мир</a>
+            <a href="rules.html">Правила</a>
+            <a href="https://discord.gg/bby9jnJpbg" target="_blank" rel="noreferrer">Discord ↗</a>
+            <a href="https://www.youtube.com/watch?v=HEm90byZzSM" target="_blank" rel="noreferrer">YouTube ↗</a>
+          </nav>
+        </div>
+        <div class="container footer-compact-bottom">
+          <span>© 2026 MineReam</span>
+          <span>Не связан с Mojang Studios</span>
         </div>
       </footer>
     </main>
   </div>
   <div class="toast" hidden>IP скопирован</div>
+  <button class="scroll-top-button" type="button" data-scroll-top aria-label="Прокрутить страницу наверх" hidden>
+    <span aria-hidden="true">↑</span>
+  </button>
   <script src="script.js"></script>
 </body>
 </html>

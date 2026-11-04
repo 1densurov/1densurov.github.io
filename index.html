@@ -7,7 +7,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <title>MineReam Mediavel</title>
-  <meta name="description" content="MineReam Mediavel - средневековый RP сервер Minecraft с кастомным миром, Discord-входом и живой ролью.">
+  <meta name="description" content="MineReam Mediavel - средневековый RP сервер Minecraft: пять рас, голосовой чат, своя валюта на душах, Тотемы-приваты и кастомный мир.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MineReam Mediavel">
+  <meta property="og:title" content="MineReam Mediavel - средневековый RP сервер Minecraft">
+  <meta property="og:description" content="Пять рас, голосовой чат, своя валюта на душах, Тотемы-приваты и кастомный мир. Java 1.21.11, play.mineream.ru">
+  <meta property="og:url" content="https://mineream.ru/">
+  <meta property="og:image" content="https://mineream.ru/assets/spawn-bridge.webp">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body id="top">
@@ -54,11 +61,20 @@
               <a class="nav-dropdown-all" href="guides.html">Все гайды <span aria-hidden="true">→</span></a>
             </div>
           </div>
+          <a href="races.html">Расы</a>
           <a href="world.html">Мир</a>
           <a href="rules.html">Правила</a>
         </nav>
         <div class="header-actions">
+          <button class="header-play" type="button" data-copy="play.mineream.ru" aria-label="Скопировать IP play.mineream.ru">
+            <span class="header-play-dot" data-online-dot aria-hidden="true"></span>
+            <span>Играть</span>
+            <small data-online-count></small>
+          </button>
           <a class="discord-link" href="https://discord.gg/bby9jnJpbg" target="_blank" rel="noreferrer">Discord</a>
+          <button class="nav-burger" type="button" data-nav-toggle aria-label="Открыть меню" aria-expanded="false">
+            <span></span>
+          </button>
         </div>
       </div>
     </header>
@@ -89,6 +105,12 @@
                 <strong>play.mineream.ru</strong>
                 <button data-copy="play.mineream.ru" type="button">Скопировать</button>
               </div>
+              <div class="server-ip-line">
+                <span>IP</span>
+                <strong>eu.mineream.ru</strong>
+                <button data-copy="eu.mineream.ru" type="button">Скопировать</button>
+                <small>Для игроков не из России</small>
+              </div>
               <span class="hero-online-status is-checking" id="hero-online-status" data-server-status role="status" aria-live="polite">
                 <span class="status-indicator" id="status-indicator" aria-hidden="true"></span>
                 <span class="status-text" id="status-text" data-server-status-text>Проверяем сервер • Игроков: — / 99</span>
@@ -104,20 +126,27 @@
             <img src="assets/mineream-short.webp" alt="MineReam Mediavel">
           </button>
           <div class="quick-showcase-body">
-            <h2>MineReam коротко</h2>
+            <h2>Что тебя ждёт</h2>
             <div class="quick-feature-list">
               <article>
                 <span>RP</span>
                 <div>
                   <h3>Средневековье</h3>
-                  <p>Играй персонажем, а не просто ником в табе.</p>
+                  <p>Играй персонажем, а не ником в табе.</p>
+                </div>
+              </article>
+              <article>
+                <span>Расы</span>
+                <div>
+                  <h3>Пять народов</h3>
+                  <p>Выбери, кем играть.</p>
                 </div>
               </article>
               <article>
                 <span>Мир</span>
                 <div>
                   <h3>Кастомная генерация</h3>
-                  <p>Острова, биомы и места для поселений.</p>
+                  <p>Острова, биомы и смена сезонов.</p>
                 </div>
               </article>
               <article>
@@ -128,10 +157,10 @@
                 </div>
               </article>
               <article>
-                <span>Вход</span>
+                <span>Голос</span>
                 <div>
-                  <h3>Через Discord</h3>
-                  <p>Доступ, связь и объявления в одном месте.</p>
+                  <h3>Живое общение</h3>
+                  <p>Говори с теми, кто рядом.</p>
                 </div>
               </article>
             </div>
@@ -163,7 +192,7 @@
             <span class="start-step-number">03</span>
             <div>
               <h3>Создай персонажа</h3>
-              <p>Отправь код боту, пройди вступление и выбери уникальное средневековое имя на кириллице.</p>
+              <p>Отправь код боту, пройди вступление, выбери <a class="start-step-link" href="races.html">расу</a> и уникальное средневековое имя на кириллице.</p>
             </div>
           </article>
         </div>
@@ -200,6 +229,10 @@
             <div class="faq-answer"><p>Зайди на <button class="faq-accent faq-copy" type="button" data-copy="play.mineream.ru">play.mineream.ru</button>, узнай код привязки, затем открой Discord и отправь этот код боту.</p></div>
           </details>
           <details class="faq-item">
+            <summary><span>Какие есть расы?</span><i aria-hidden="true">＋</i></summary>
+            <div class="faq-answer"><p>Человек, Эльф, Гном, Огнерождённый и Пустотник. Подробнее — на странице <a class="faq-accent" href="races.html">Расы</a>.</p></div>
+          </details>
+          <details class="faq-item">
             <summary><span>Можно ли играть без Discord?</span><i aria-hidden="true">＋</i></summary>
             <div class="faq-answer"><p>Нет. Discord нужен для привязки аккаунта, доступа к серверу и связи с администрацией.</p></div>
           </details>
@@ -221,41 +254,26 @@
           </details>
         </div>
       </section>
-      <footer class="site-footer site-footer-expanded">
-        <div class="container footer-main">
-          <div class="footer-about">
-            <img src="assets/mr-logo.webp" alt="Логотип MineReam" class="footer-logo" loading="lazy">
-            <p>Средневековый RP-сервер Minecraft с кастомным миром, живыми персонажами и общей историей игроков.</p>
-          </div>
-          <div class="footer-column">
-            <h3>Навигация</h3>
-            <nav aria-label="Основная навигация внизу страницы">
-              <a href="index.html" aria-current="page">Главная</a>
-              <a href="guides.html">Гайды</a>
-              <a href="brewery.html">Brewery</a>
-              <a href="world.html">Мир</a>
-              <a href="rules.html">Правила</a>
-            </nav>
-          </div>
-          <div class="footer-column">
-            <h3>Игрокам</h3>
-            <nav aria-label="Разделы главной страницы">
-              <a href="#start-playing">Как начать</a>
-              <a href="#faq">Частые вопросы</a>
-              <a href="#server">IP сервера</a>
-            </nav>
-          </div>
-          <div class="footer-column">
-            <h3>Сообщество</h3>
-            <nav aria-label="Социальные ссылки">
-              <a href="https://discord.gg/bby9jnJpbg" target="_blank" rel="noreferrer">Discord ↗</a>
-              <a href="https://www.youtube.com/watch?v=HEm90byZzSM" target="_blank" rel="noreferrer">YouTube ↗</a>
-            </nav>
-          </div>
+      <div class="container page-vote">Голосовать:
+        <a href="https://hotmc.ru/vote-235838" target="_blank" rel="noreferrer">HotMC</a> ·
+        <a href="https://minecraftrating.ru/vote/272748/" target="_blank" rel="noreferrer">MinecraftRating</a> ·
+        <a href="https://top-minecrafter.com/server/mineream-mediavel/" target="_blank" rel="noreferrer">Top-Minecrafter</a>
+      </div>
+      <footer class="site-footer site-footer-compact">
+        <div class="container footer-compact-top">
+          <nav class="footer-links" aria-label="Разделы сайта">
+            <a href="index.html" aria-current="page">Главная</a>
+            <a href="guides.html">Гайды</a>
+            <a href="races.html">Расы</a>
+            <a href="world.html">Мир</a>
+            <a href="rules.html">Правила</a>
+            <a href="https://discord.gg/bby9jnJpbg" target="_blank" rel="noreferrer">Discord ↗</a>
+            <a href="https://www.youtube.com/watch?v=HEm90byZzSM" target="_blank" rel="noreferrer">YouTube ↗</a>
+          </nav>
         </div>
-        <div class="container footer-inner">
-          <span>© 2026 MineReam. Все права защищены.</span>
-          <span>Не является официальным продуктом Mojang Studios.</span>
+        <div class="container footer-compact-bottom">
+          <span>© 2026 MineReam</span>
+          <span>Не связан с Mojang Studios</span>
         </div>
       </footer>
     </main>

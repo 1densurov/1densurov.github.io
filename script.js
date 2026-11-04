@@ -20,6 +20,20 @@ const setNavState = () => {
 window.addEventListener('scroll', setNavState, { passive: true });
 setNavState();
 
+const navToggle = document.querySelector('[data-nav-toggle]');
+const setMenuOpen = (open) => {
+  nav?.classList.toggle('is-open', open);
+  navToggle?.setAttribute('aria-expanded', String(open));
+  navToggle?.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
+};
+navToggle?.addEventListener('click', () => setMenuOpen(!nav.classList.contains('is-open')));
+nav?.querySelectorAll('.main-nav a').forEach((link) => {
+  link.addEventListener('click', () => setMenuOpen(false));
+});
+window.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') setMenuOpen(false);
+});
+
 document.querySelectorAll('[data-copy]').forEach((button) => {
   button.addEventListener('click', async () => {
     const value = button.getAttribute('data-copy');
@@ -70,8 +84,12 @@ window.addEventListener('keydown', (event) => {
 
 const serverStatus = document.querySelector('[data-server-status]');
 const serverStatusText = document.querySelector('[data-server-status-text]');
+const onlineDot = document.querySelector('[data-online-dot]');
+const onlineCount = document.querySelector('[data-online-count]');
 
-const renderServerStatus = (state, text) => {
+const renderServerStatus = (state, text, players) => {
+  onlineDot?.classList.toggle('is-online', state === 'is-online');
+  if (onlineCount) onlineCount.textContent = state === 'is-online' ? `${players} онлайн` : '';
   if (!serverStatus || !serverStatusText) return;
   serverStatus.classList.remove('is-checking', 'is-online', 'is-offline');
   serverStatus.classList.add(state);
@@ -79,7 +97,7 @@ const renderServerStatus = (state, text) => {
 };
 
 const loadServerStatus = async () => {
-  if (!serverStatus) return;
+  if (!serverStatus && !onlineDot) return;
   const controller = new AbortController();
   const timeout = window.setTimeout(() => controller.abort(), 6500);
 
@@ -95,7 +113,7 @@ const loadServerStatus = async () => {
     const maxPlayers = Number.isFinite(Number(data.players?.max)) ? Number(data.players.max) : 99;
 
     if (data.online) {
-      renderServerStatus('is-online', `Сервер онлайн • Игроков: ${onlinePlayers} / ${maxPlayers}`);
+      renderServerStatus('is-online', `Сервер онлайн • Игроков: ${onlinePlayers} / ${maxPlayers}`, onlinePlayers);
     } else {
       renderServerStatus('is-offline', `Сервер офлайн • Игроков: 0 / ${maxPlayers}`);
     }

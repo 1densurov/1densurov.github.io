@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Расы - MineReam</title>
+  <meta name="description" content="Пять рас MineReam Mediavel: Человек, Эльф, Гном, Огнерождённый и Пустотник. Сильные и слабые стороны каждого народа.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MineReam Mediavel">
+  <meta property="og:title" content="Расы MineReam Mediavel">
+  <meta property="og:description" content="Человек, Эльф, Гном, Огнерождённый и Пустотник — у каждого народа свои силы и слабости.">
+  <meta property="og:url" content="https://mineream.ru/races.html">
+  <meta property="og:image" content="https://mineream.ru/assets/spawn-bridge.webp">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header" data-nav>
+      <div class="header-inner">
+        <a class="brand" href="index.html" aria-label="MineReam Mediavel">
+          <img src="assets/mr-logo.webp" alt="MineReam" class="brand-logo">
+        </a>
+        <nav class="main-nav" aria-label="Главная навигация">
+          <a href="index.html">Главная</a>
+          <div class="nav-dropdown">
+            <a class="nav-dropdown-toggle" href="guides.html">
+              <span>Гайды</span>
+              <span class="nav-dropdown-caret" aria-hidden="true"></span>
+            </a>
+            <div class="nav-dropdown-menu" aria-label="Разделы гайдов">
+              <a class="nav-dropdown-item" href="brewery.html">
+                <span class="nav-guide-mark nav-guide-brewery" aria-hidden="true"></span>
+                <span><strong>Brewery</strong><small>Напитки, варка и рецепты</small></span>
+              </a>
+              <a class="nav-dropdown-item" href="guides.html#economy">
+                <span class="nav-guide-mark nav-guide-souls" aria-hidden="true"></span>
+                <span><strong>Валюта</strong><small>Осколки, фрагменты и великие души</small></span>
+              </a>
+              <a class="nav-dropdown-item" href="guides.html#territory">
+                <span class="nav-guide-mark nav-guide-totems" aria-hidden="true"></span>
+                <span><strong>Приваты</strong><small>Тотемы, земля и ключи</small></span>
+              </a>
+              <a class="nav-dropdown-item" href="guides.html#roleplay">
+                <span class="nav-guide-mark nav-guide-rp" aria-hidden="true"></span>
+                <span><strong>RolePlay</strong><small>/me, /do, /try и отыгрыш</small></span>
+              </a>
+              <a class="nav-dropdown-item" href="guides.html#systems">
+                <span class="nav-guide-mark nav-guide-systems" aria-hidden="true"></span>
+                <span><strong>Механики</strong><small>Системы сервера и полезные мелочи</small></span>
+              </a>
+              <a class="nav-dropdown-all" href="guides.html">Все гайды <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+          <a href="races.html" aria-current="page">Расы</a>
+          <a href="world.html">Мир</a>
+          <a href="rules.html">Правила</a>
+        </nav>
+        <div class="header-actions">
+          <button class="header-play" type="button" data-copy="play.mineream.ru" aria-label="Скопировать IP play.mineream.ru">
+            <span class="header-play-dot" data-online-dot aria-hidden="true"></span>
+            <span>Играть</span>
+            <small data-online-count></small>
+          </button>
+          <a class="discord-link" href="https://discord.gg/bby9jnJpbg" target="_blank" rel="noreferrer">Discord</a>
+          <button class="nav-burger" type="button" data-nav-toggle aria-label="Открыть меню" aria-expanded="false">
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="rules-page">
+      <section class="rules-hero">
+        <div class="container rules-hero-inner">
+          <h1>Расы MineReam</h1>
+        </div>
+      </section>
+
+      <section class="section races-section">
+        <div class="container">
+          <div class="race-grid">
+            <article class="race-card race-human race-card-wide">
+              <time>Обычный мир</time>
+              <h2>Человек</h2>
+              <p>Самый распространённый народ. Без особых сил, но и без слабостей — хороший выбор для первого персонажа.</p>
+              <ul class="race-traits">
+                <li class="is-note">Обычные рост, скорость и сила</li>
+                <li>Никаких штрафов: подходит для любого стиля игры</li>
+              </ul>
+            </article>
+
+            <article class="race-card race-elf">
+              <time>Обычный мир</time>
+              <h2>Эльф</h2>
+              <p>Лёгкий и быстрый народ лесов. Уходит от опасности раньше, чем она успевает догнать.</p>
+              <ul class="race-traits">
+                <li>Бегает быстрее остальных</li>
+                <li>Прыгает выше</li>
+                <li>Мягче приземляется — меньше урона от падения</li>
+                <li class="is-minus">Слабее в ближнем бою</li>
+                <li class="is-note">Чуть ниже человека</li>
+              </ul>
+            </article>
+
+            <article class="race-card race-dwarf">
+              <time>Обычный мир</time>
+              <h2>Гном</h2>
+              <p>Крепкий подгорный народ. Лучший шахтёр и упрямый боец, которого трудно сдвинуть с места.</p>
+              <ul class="race-traits">
+                <li>Копает быстрее</li>
+                <li>Почти не отлетает от ударов</li>
+                <li class="is-minus">Медленнее ходит</li>
+                <li class="is-note">Самый низкий народ</li>
+              </ul>
+            </article>
+
+            <article class="race-card race-fireborn">
+              <time>Дитя Ада</time>
+              <h2>Огнерождённый</h2>
+              <p>Народ, рождённый в пламени. Огонь ему не враг — враг ему вода.</p>
+              <ul class="race-traits">
+                <li>Не горит: огонь, лава и магма не наносят урона</li>
+                <li>Бьёт сильнее остальных</li>
+                <li class="is-minus">Атакует медленнее</li>
+                <li class="is-minus">Вода ранит — каждую секунду в ней отнимает здоровье</li>
+                <li class="is-note">Чуть выше человека</li>
+              </ul>
+            </article>
+
+            <article class="race-card race-voidborn">
+              <time>Дитя Края</time>
+              <h2>Пустотник</h2>
+              <p>Высокий и молчаливый народ пустоты. Дотягивается туда, куда другим не достать.</p>
+              <ul class="race-traits">
+                <li>Дальше достаёт руками — и блоки, и существ</li>
+                <li>Мягче приземляется — меньше урона от падения</li>
+                <li class="is-minus">Слабее в ближнем бою</li>
+                <li class="is-note">Самый высокий народ</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <div class="container page-vote">Голосовать:
+        <a href="https://hotmc.ru/vote-235838" target="_blank" rel="noreferrer">HotMC</a> ·
+        <a href="https://minecraftrating.ru/vote/272748/" target="_blank" rel="noreferrer">MinecraftRating</a> ·
+        <a href="https://top-minecrafter.com/server/mineream-mediavel/" target="_blank" rel="noreferrer">Top-Minecrafter</a>
+      </div>
+      <footer class="site-footer site-footer-compact">
+        <div class="container footer-compact-top">
+          <nav class="footer-links" aria-label="Разделы сайта">
+            <a href="index.html">Главная</a>
+            <a href="guides.html">Гайды</a>
+            <a href="races.html" aria-current="page">Расы</a>
+            <a href="world.html">Мир</a>
+            <a href="rules.html">Правила</a>
+            <a href="https://discord.gg/bby9jnJpbg" target="_blank" rel="noreferrer">Discord ↗</a>
+            <a href="https://www.youtube.com/watch?v=HEm90byZzSM" target="_blank" rel="noreferrer">YouTube ↗</a>
+          </nav>
+        </div>
+        <div class="container footer-compact-bottom">
+          <span>© 2026 MineReam</span>
+          <span>Не связан с Mojang Studios</span>
+        </div>
+      </footer>
+    </main>
+  </div>
+  <div class="toast" hidden>IP скопирован</div>
+  <button class="scroll-top-button" type="button" data-scroll-top aria-label="Прокрутить страницу наверх" hidden>
+    <span aria-hidden="true">↑</span>
+  </button>
+  <script src="script.js"></script>
+</body>
+</html>

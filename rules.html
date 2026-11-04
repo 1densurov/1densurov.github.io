@@ -48,11 +48,20 @@
               <a class="nav-dropdown-all" href="guides.html">Все гайды <span aria-hidden="true">→</span></a>
             </div>
           </div>
+          <a href="races.html">Расы</a>
           <a href="world.html">Мир</a>
           <a href="rules.html" aria-current="page">Правила</a>
         </nav>
         <div class="header-actions">
+          <button class="header-play" type="button" data-copy="play.mineream.ru" aria-label="Скопировать IP play.mineream.ru">
+            <span class="header-play-dot" data-online-dot aria-hidden="true"></span>
+            <span>Играть</span>
+            <small data-online-count></small>
+          </button>
           <a class="discord-link" href="https://discord.gg/bby9jnJpbg" target="_blank" rel="noreferrer">Discord</a>
+          <button class="nav-burger" type="button" data-nav-toggle aria-label="Открыть меню" aria-expanded="false">
+            <span></span>
+          </button>
         </div>
       </div>
     </header>
@@ -152,11 +161,33 @@
       </section>
     </main>
 
-    <footer class="footer">
-      <span>MineReam Mediavel</span>
-      <a href="https://discord.gg/bby9jnJpbg" target="_blank" rel="noreferrer">Discord</a>
-    </footer>
+    <div class="container page-vote">Голосовать:
+        <a href="https://hotmc.ru/vote-235838" target="_blank" rel="noreferrer">HotMC</a> ·
+        <a href="https://minecraftrating.ru/vote/272748/" target="_blank" rel="noreferrer">MinecraftRating</a> ·
+        <a href="https://top-minecrafter.com/server/mineream-mediavel/" target="_blank" rel="noreferrer">Top-Minecrafter</a>
+      </div>
+      <footer class="site-footer site-footer-compact">
+        <div class="container footer-compact-top">
+          <nav class="footer-links" aria-label="Разделы сайта">
+            <a href="index.html">Главная</a>
+            <a href="guides.html">Гайды</a>
+            <a href="races.html">Расы</a>
+            <a href="world.html">Мир</a>
+            <a href="rules.html" aria-current="page">Правила</a>
+            <a href="https://discord.gg/bby9jnJpbg" target="_blank" rel="noreferrer">Discord ↗</a>
+            <a href="https://www.youtube.com/watch?v=HEm90byZzSM" target="_blank" rel="noreferrer">YouTube ↗</a>
+          </nav>
+        </div>
+        <div class="container footer-compact-bottom">
+          <span>© 2026 MineReam</span>
+          <span>Не связан с Mojang Studios</span>
+        </div>
+      </footer>
   </div>
+  <div class="toast" hidden>IP скопирован</div>
+  <button class="scroll-top-button" type="button" data-scroll-top aria-label="Прокрутить страницу наверх" hidden>
+    <span aria-hidden="true">↑</span>
+  </button>
   <script src="script.js"></script>
 </body>
 </html>
