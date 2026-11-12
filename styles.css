@@ -3024,3 +3024,92 @@ body {
   /* кнопка «наверх» стоит справа внизу — не даём ей лечь на текст */
   .site-footer-compact { padding-bottom: 70px; }
 }
+
+/* Онлайн-карта (страница «Мир») */
+.online-map-section { padding-bottom: 0; }
+.online-map {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+  gap: 18px;
+  align-items: stretch;
+}
+.online-map-preview {
+  position: relative;
+  min-height: 320px;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  box-shadow: var(--shadow);
+}
+.online-map-preview img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.online-map-live {
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 11px;
+  border: 1px solid rgba(173, 243, 253, 0.32);
+  color: var(--cyan);
+  background: rgba(7, 11, 15, 0.72);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.online-map-live i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #5cc98b;
+  box-shadow: 0 0 0 0 rgba(92, 201, 139, 0.6);
+  animation: online-map-pulse 2s infinite;
+}
+@keyframes online-map-pulse {
+  70% { box-shadow: 0 0 0 8px rgba(92, 201, 139, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(92, 201, 139, 0); }
+}
+.online-map-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(22px, 3vw, 34px);
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+.online-map-body h2 { font-size: clamp(30px, 4vw, 46px); }
+.online-map-body > p { color: var(--muted); }
+.server-ip-line .map-open {
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid rgba(173, 243, 253, 0.32);
+  color: var(--cyan);
+  background: rgba(79, 148, 252, 0.12);
+  font-weight: 900;
+}
+.server-ip-line .map-open:hover { background: rgba(79, 148, 252, 0.22); }
+.online-map-hint {
+  margin: 16px 0 0;
+  color: var(--faint);
+  font-size: 14px;
+}
+.online-map-hint code {
+  padding: 2px 7px;
+  border: 1px solid var(--line);
+  color: var(--cyan);
+  background: rgba(255, 255, 255, 0.04);
+  font-family: inherit;
+  font-weight: 800;
+}
+@media (max-width: 900px) {
+  .online-map { grid-template-columns: 1fr; }
+  .online-map-preview { min-height: 240px; }
+}
