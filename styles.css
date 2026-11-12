@@ -22,10 +22,7 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   color: var(--text);
-  background:
-    radial-gradient(circle at 8% 4%, rgba(79, 148, 252, 0.14), transparent 34%),
-    radial-gradient(circle at 92% 18%, rgba(217, 163, 61, 0.11), transparent 30%),
-    linear-gradient(180deg, #080c10 0%, #0b1015 48%, #080b0e 100%);
+  background: var(--bg);
   font-family: "Manrope", "Segoe UI", Arial, sans-serif;
   line-height: 1.5;
 }
@@ -2726,10 +2723,7 @@ h3 {
 }
 
 /* Brewery filters: no background flash on click */
-body {
-  background-attachment: fixed;
-  background-size: 100vw 100vh;
-}
+/* Фон сайта - отдельный неподвижный слой (body::before), см. «Фон сайта» в конце файла */
 
 .brewery-page .brewery-filter-row button,
 .brewery-page .brewery-filter-row button:hover,
@@ -3029,23 +3023,36 @@ body {
 .online-map-section { padding-bottom: 0; }
 .online-map {
   display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+  grid-template-columns: minmax(0, 480px) minmax(320px, 1fr);
   gap: 18px;
   align-items: stretch;
 }
 .online-map-preview {
   position: relative;
-  min-height: 320px;
+  align-self: center;
+  display: block;
+  width: 100%;
+  padding: 0;
+  background: none;
+  cursor: zoom-in;
   overflow: hidden;
   border: 1px solid var(--line-strong);
   box-shadow: var(--shadow);
 }
+/* Карта целиком, без обрезки; по клику открывается крупно */
 .online-map-preview img {
-  position: absolute;
-  inset: 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+.online-map-preview:hover img,
+.online-map-preview:focus-visible img {
+  transform: scale(1.025);
+  filter: saturate(1.1) contrast(1.05);
+}
+.online-map-preview:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
 }
 .online-map-live {
   position: absolute;
@@ -3111,5 +3118,55 @@ body {
 }
 @media (max-width: 900px) {
   .online-map { grid-template-columns: 1fr; }
-  .online-map-preview { min-height: 240px; }
 }
+
+/* Фон сайта: свой градиент отдельным неподвижным слоем.
+   background-attachment: fixed на телефонах не работает и даёт полосы-стыки, а этот слой - нет. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(120% 70% at 0% 0%, rgba(79, 148, 252, 0.16), transparent 60%),
+    radial-gradient(90% 60% at 100% 22%, rgba(173, 243, 253, 0.07), transparent 62%),
+    radial-gradient(110% 70% at 100% 100%, rgba(217, 163, 61, 0.08), transparent 60%),
+    radial-gradient(90% 60% at 0% 100%, rgba(79, 148, 252, 0.07), transparent 60%),
+    linear-gradient(180deg, #080d12 0%, #0a1016 50%, #070b0f 100%);
+}
+/* Картинка шапки главной плавно растворяется в фон - без резкого края */
+.hero-bg {
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 35%, transparent 92%);
+  mask-image: linear-gradient(180deg, #000 0%, #000 35%, transparent 92%);
+}
+.hero-bg::after {
+  background: linear-gradient(90deg, rgba(7, 11, 15, 0.9), rgba(7, 11, 15, 0.3));
+}/* Шапки внутренних страниц: картинка плавно уходит в фон, без линии снизу */
+.rules-hero {
+  --hero-img: url("assets/keeper-hall.webp");
+  position: relative;
+  isolation: isolate;
+  border-bottom: 0;
+  background: none;
+}
+.guides-hero { --hero-img: url("assets/chronicle-room.webp"); background: none; }
+.rules-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(180deg, rgba(7, 11, 15, 0.7), rgba(7, 11, 15, 0.86)),
+    var(--hero-img) center/cover;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 30%, #000 55%, transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0%, #000 30%, #000 55%, transparent 100%);
+}
+/* Биомы на всю ширину (страница «Мир») */
+.biome-grid-wide { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+@media (max-width: 1100px) { .biome-grid-wide { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 760px) { .biome-grid-wide { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+/* Ссылки на карту: адрес + кнопка, без подписи слева */
+.map-link-line { grid-template-columns: minmax(0, 1fr) auto; }
+.map-link-line small { grid-column: 1 / -1; }
+@media (max-width: 640px) { .map-link-line { grid-template-columns: minmax(0, 1fr) auto; } }
