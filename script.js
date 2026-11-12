@@ -47,7 +47,8 @@ document.querySelectorAll('[data-copy]').forEach((button) => {
         }, 1800);
       }
     } catch (error) {
-      button.textContent = value;
+      // Простые кнопки показывают IP вместо текста; у кнопок с разметкой (IP уже написан) ничего не трогаем
+      if (!button.children.length) button.textContent = value;
     }
   });
 });
