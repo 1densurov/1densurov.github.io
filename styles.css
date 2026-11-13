@@ -3209,3 +3209,15 @@ button.map-link {
 .online-map { align-items: stretch; }
 .online-map-preview { align-self: stretch; }
 .online-map-body { align-self: stretch; }
+
+/* Квадратные иллюстрации гайдов показываем целиком, без обрезки */
+.guide-card img[src*="assets/guide-"] {
+  object-fit: contain;
+  background: transparent;
+}
+@media (max-width: 760px) {
+  .guide-card img[src*="assets/guide-"] {
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+}
