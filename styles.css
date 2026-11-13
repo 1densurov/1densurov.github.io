@@ -795,7 +795,7 @@ h3 {
   border-bottom: 1px solid var(--line);
   background:
     linear-gradient(180deg, rgba(7, 11, 15, 0.78), rgba(7, 11, 15, 0.96)),
-    url("assets/keeper-hall.webp") center/cover;
+    url("assets/hero-world.webp") center/cover;
 }
 .rules-hero-inner {
   max-width: 820px;
@@ -1201,7 +1201,7 @@ h3 {
 .guides-hero {
   background:
     linear-gradient(180deg, rgba(7, 11, 15, 0.76), rgba(7, 11, 15, 0.96)),
-    url("assets/chronicle-room.webp") center/cover;
+    url("assets/hero-world.webp") center/cover;
 }
 .guides-layout {
   display: grid;
@@ -3120,13 +3120,13 @@ body::before {
   background: linear-gradient(90deg, rgba(7, 11, 15, 0.9), rgba(7, 11, 15, 0.3));
 }/* Шапки внутренних страниц: картинка плавно уходит в фон, без линии снизу */
 .rules-hero {
-  --hero-img: url("assets/keeper-hall.webp");
+  --hero-img: url("assets/hero-world.webp");
   position: relative;
   isolation: isolate;
   border-bottom: 0;
   background: none;
 }
-.guides-hero { --hero-img: url("assets/chronicle-room.webp"); background: none; }
+.guides-hero { --hero-img: url("assets/hero-world.webp"); background: none; }
 .rules-hero::before {
   content: "";
   position: absolute;
